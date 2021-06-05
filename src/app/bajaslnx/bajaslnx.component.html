@@ -1,0 +1,256 @@
+<div class="container">
+    <div class="inicio espacio">
+        <h3>
+            <p><b>Base de Datos: Linux > BAJAS</b></p>
+        </h3>
+    </div>
+    <div class="espaciodos">
+        <h4>
+            <p><b>Selecciona la tabla:</b></p>
+        </h4>
+    </div>
+    <div class="inicio">
+        <div class="card text-center tablas">
+            <div class="card-header headertabla" style="color: #fff;"><b>Tablas Disponibles:</b></div>
+            <div class="card-body">
+
+                <!-- Codigo de tablas -->
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Selección</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>ASG</td>
+                            <td>
+                                <button type="button" class="btn btn-outline-secondary" data-mdb-ripple-color="dark"
+                                    (click)="asg.show()">
+                                    Seleccionar
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>EMP</td>
+                            <td>
+                                <button type="button" class="btn btn-outline-secondary" data-mdb-ripple-color="dark"
+                                    (click)="emp.show()">
+                                    Seleccionar
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>PAY</td>
+                            <td>
+                                <button type="button" class="btn btn-outline-secondary" data-mdb-ripple-color="dark"  (click)="pay.show()">
+                                    Seleccionar
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>PROJ</td>
+                            <td>
+                                <button type="button" class="btn btn-outline-secondary" data-mdb-ripple-color="dark" (click)="proj.show()">
+                                    Seleccionar
+                                </button>
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+
+
+            </div>
+
+        </div>
+
+    </div>
+    <div class="cdback regreso">
+        <a class="btn btn-primary cdbtnback" style="background-color: #980da5;" routerLink="/ldb" role="button">
+            <div class="btntxtback">
+                <p><i class="fas fa-arrow-left btniconback"></i>Regresar</p>
+            </div>
+        </a>
+    </div>
+    <br><br><br><br>
+</div>
+
+
+<!---------------------MODAL DE TABLA ASG ------------------------------------------------------------------------------>
+<div mdbModal #asg="mdbModal" class="modal fade top" id="asgTop" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel" aria-hidden="true" style="overflow-y: auto">
+    <div class="modal-dialog modal-notify modal-info" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center " style="background-color: #a446f1;">
+                <!-- TITULO -->
+                <h4 class="modal-title white-text w-100 font-weight-bold py-2">
+                    Baja en tabla - ASG
+                </h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="asg.hide()">
+                    <span aria-hidden="true" class="white-text">&times;</span>
+                </button>
+            </div>
+
+            <!--Body-->
+            <div class="modal-body">
+                <div class="inicio">
+                    <form class="text-center border border-light p-5 form modalstyle" action="#!">
+                        <p class="h4 mb-4">Introducir el ID:</p>
+
+                       <!-- ID  -->
+                       <input type="number" id="asg_id" class="form-control mb-4" placeholder="ID">
+
+                       <!-- Boton de Eliminar -->
+                       <button type="button" class="btn btn-outline-secondary" data-mdb-ripple-color="dark"
+                           type="submit" (click)="warning()">
+                           Eliminar
+                       </button>
+                    </form>
+                    <!-- Default form login -->
+                </div>
+            </div>
+            <!--/.Body-->
+        </div>
+
+    </div>
+
+</div>
+<!------------------------------------ FIN DE MODAL DE TABLA ASG ------------------------------------------------------------------------------>
+
+
+<!-------------------------------------- MODAL DE TABLA EMP ------------------------------------------------------------------------------>
+<div mdbModal #emp="mdbModal" class="modal fade top" id="empModalTop" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel" aria-hidden="true" style="overflow-y: auto">
+    <div class="modal-dialog modal-notify modal-info" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center" style="background-color: #a446f1;">
+                <!-- TITULO -->
+                <h4 class="modal-title white-text w-100 font-weight-bold py-2">
+                    Baja en tabla - EMP
+                </h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="emp.hide()">
+                    <span aria-hidden="true" class="white-text">&times;</span>
+                </button>
+            </div>
+
+            <!--Body-->
+            <div class="modal-body">
+                <div class="inicio">
+                    <form class="text-center border border-light p-5 form modalstyle" action="#!">
+                        <p class="h4 mb-4">Introducir el ID:</p>
+
+
+                       <!-- ID  -->
+                       <input type="number" id="emp_id" class="form-control mb-4" placeholder="ID">
+
+                       <!-- Boton de Eliminar -->
+                       <button type="button" class="btn btn-outline-secondary" data-mdb-ripple-color="dark"
+                           type="submit" (click)="warning()">
+                           Eliminar
+                       </button>
+                    </form>
+                    <!-- Default form login -->
+                </div>
+            </div>
+            <!--/.Body-->
+        </div>
+
+    </div>
+
+</div>
+<!------------------------------------ FIN DE MODAL DE TABLA EMP ------------------------------------------------------------------------------>
+
+
+
+<!-------------------------------------- MODAL DE TABLA PAY ------------------------------------------------------------------------------>
+<div mdbModal #pay="mdbModal" class="modal fade top" id="payModalTop" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel" aria-hidden="true" style="overflow-y: auto">
+    <div class="modal-dialog modal-notify modal-info" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center" style="background-color: #a446f1;">
+                <!-- TITULO -->
+                <h4 class="modal-title white-text w-100 font-weight-bold py-2">
+                    Baja en tabla - PAY
+                </h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="pay.hide()">
+                    <span aria-hidden="true" class="white-text">&times;</span>
+                </button>
+            </div>
+
+            <!--Body-->
+            <div class="modal-body">
+                <div class="inicio">
+                    <form class="text-center border border-light p-5 form modalstyle" action="#!">
+                        <p class="h4 mb-4">Introducir el ID:</p>
+
+                       <!-- ID  -->
+                       <input type="number" id="pay_id" class="form-control mb-4" placeholder="ID">
+
+                       <!-- Boton de Eliminar -->
+                       <button type="button" class="btn btn-outline-secondary" data-mdb-ripple-color="dark"
+                           type="submit" (click)="warning()">
+                           Eliminar
+                       </button>
+                    </form>
+                    <!-- Default form login -->
+                </div>
+            </div>
+            <!--/.Body-->
+        </div>
+
+    </div>
+
+</div>
+<!------------------------------------ FIN DE MODAL DE TABLA PAY ------------------------------------------------------------------------------>
+
+
+<!-------------------------------------- MODAL DE TABLA PROJ ------------------------------------------------------------------------------>
+<div mdbModal #proj="mdbModal" class="modal fade top" id="projModalTop" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel" aria-hidden="true" style="overflow-y: auto">
+    <div class="modal-dialog modal-notify modal-info" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center" style="background-color: #a446f1;">
+                <!-- TITULO -->
+                <h4 class="modal-title white-text w-100 font-weight-bold py-2">
+                    Baja en tabla - PROJ
+                </h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="proj.hide()">
+                    <span aria-hidden="true" class="white-text">&times;</span>
+                </button>
+            </div>
+
+            <!--Body-->
+            <div class="modal-body">
+                <div class="inicio">
+                    <form class="text-center border border-light p-5 form modalstyle" action="#!">
+                        <p class="h4 mb-4">Introducir el ID:</p>
+
+                        <!-- ID  -->
+                        <input type="number" id="proj_id" class="form-control mb-4" placeholder="ID">
+
+                        <!-- Boton de Eliminar -->
+                        <button type="button" class="btn btn-outline-secondary" data-mdb-ripple-color="dark"
+                            type="submit" (click)="warning()">
+                            Eliminar
+                        </button>
+                    </form>
+                    <!-- Default form login -->
+                </div>
+            </div>
+            <!--/.Body-->
+        </div>
+
+    </div>
+
+</div>
+<!------------------------------------ FIN DE MODAL DE TABLA PROJ ------------------------------------------------------------------------------>
+
+
+

@@ -1,0 +1,38 @@
+.inicio {
+    display: flex;
+    justify-content: center;
+    align-self: center;  
+  }
+
+  .cdini{
+      margin: 30px;
+      border-radius: 30px;
+  }
+
+  
+  .btnicon{
+    margin-top: 40px;
+    font-size: 90px;
+}
+
+.titulo{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    margin-bottom: 15px;
+    margin-top: 100px;
+}
+
+.cdbtn{
+    width: auto;
+    height: 230px;
+    border-radius: 30px;
+}
+
+.btntxt{
+    justify-content: center;
+    align-self: center;
+    align-content: center; 
+    margin-top: 22px;
+    font-size: 25px;
+}
