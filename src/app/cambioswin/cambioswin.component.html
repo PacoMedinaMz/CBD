@@ -1,1 +1,352 @@
-<p>cambioswin works!</p>
+<div class="container">
+    <div class="inicio espacio">
+        <h3>
+            <p><b>Base de Datos: Windows > CAMBIOS</b></p>
+        </h3>
+    </div>
+    <div class="espaciodos">
+        <h4>
+            <p><b>Selecciona la tabla:</b></p>
+        </h4>
+    </div>
+    <div class="inicio">
+        <div class="card text-center tablas">
+            <div class="card-header headertabla" style="color: #fff;"><b>Tablas Disponibles:</b></div>
+
+            <!-- TABLA ASG -->
+            <ngb-accordion #acc="ngbAccordion" activeIds="config-panel-one">
+                <ngb-panel>
+                    <ng-template ngbPanelTitle>
+                        <span><b> ASG </b></span>
+                    </ng-template>
+                    <ng-template ngbPanelContent>
+
+                        <!-- De aqui se puede usar el ngfor* para obtener todos los datos de la BD -->
+                        <table class="table table-striped">
+                            <thead>
+                                <th>ID</th>
+                                <th>ENO</th>
+                                <th>PNO</th>
+                                <th>RESP</th>
+                                <th>DUR</th>
+                                <th>*</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <!-- Aqui va lo recuperado de la base de datos -->
+                                    <td>Info</td>
+                                    <td>Info</td>
+                                    <td>Info</td>
+                                    <td>Info</td>
+                                    <td>Info</td>
+                                    <td><button type="button" class="btn btn-outline-primary"
+                                            data-mdb-ripple-color="dark" (click)="asg.show()">Modificar</button></td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+
+                    </ng-template>
+                </ngb-panel>
+
+                <!-- TABLA EMP -->
+                <ngb-panel>
+                    <ng-template ngbPanelTitle>
+                        <span><b> EMP </b></span>
+                    </ng-template>
+                    <ng-template ngbPanelContent>
+
+                        <!-- De aqui se puede usar el ngfor* para obtener todos los datos de la BD -->
+                        <table class="table table-striped">
+                            <thead>
+                                <th>ID</th>
+                                <th>ENO</th>
+                                <th>ENAME</th>
+                                <th>TITLE</th>
+                                <th>*</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <!-- Aqui va lo recuperado de la base de datos -->
+                                    <td>Info</td>
+                                    <td>Info</td>
+                                    <td>Info</td>
+                                    <td>Info</td>
+                                    <td><button type="button" class="btn btn-outline-primary"
+                                            data-mdb-ripple-color="dark" (click)="emp.show()">Modificar</button></td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+
+                    </ng-template>
+                </ngb-panel>
+
+
+                <!-- TABLA PAY -->
+                <ngb-panel>
+                    <ng-template ngbPanelTitle>
+                        <span><b> PAY </b></span>
+                    </ng-template>
+                    <ng-template ngbPanelContent>
+                        <!-- De aqui se puede usar el ngfor* para obtener todos los datos de la BD -->
+                        <table class="table table-striped">
+                            <thead>
+                                <th>ID</th>
+                                <th>TITLE</th>
+                                <th>SAL</th>
+                                <th>*</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <!-- Aqui va lo recuperado de la base de datos -->
+                                    <td>Info</td>
+                                    <td>Info</td>
+                                    <td>Info</td>
+                                    <td><button type="button" class="btn btn-outline-primary"
+                                            data-mdb-ripple-color="dark" (click)="pay.show()">Modificar</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </ng-template>
+                </ngb-panel>
+
+                <!-- TABLA PROJ -->
+                <ngb-panel>
+                    <ng-template ngbPanelTitle>
+                        <span><b> PROJ </b></span>
+                    </ng-template>
+                    <ng-template ngbPanelContent>
+                        <!-- De aqui se puede usar el ngfor* para obtener todos los datos de la BD -->
+                        <table class="table table-striped">
+                            <thead>
+                                <th>ID</th>
+                                <th>PNO</th>
+                                <th>PNAME</th>
+                                <th>BUDGET</th>
+                                <th>*</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <!-- Aqui va lo recuperado de la base de datos -->
+                                    <td>Info</td>
+                                    <td>Info</td>
+                                    <td>Info</td>
+                                    <td>Info</td>
+                                    <td><button type="button" class="btn btn-outline-primary"
+                                            data-mdb-ripple-color="dark" (click)="proj.show()">Modificar</button></td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+
+                    </ng-template>
+                </ngb-panel>
+            </ngb-accordion>
+        </div>
+
+    </div>
+    <div class="cdback regreso">
+        <a class="btn btn-secondary cdbtnback" style="background-color: #0d60a5;" routerLink="/wdb" role="button">
+            <div class="btntxtback">
+                <p><i class="fas fa-arrow-left btniconback"></i>Regresar</p>
+            </div>
+        </a>
+    </div>
+    <br><br><br><br>
+</div>
+
+
+
+<!---------------------MODAL DE TABLA ASG ------------------------------------------------------------------------------>
+<div mdbModal #asg="mdbModal" class="modal fade top" id="asgTop" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel" aria-hidden="true" style="overflow-y: auto">
+    <div class="modal-dialog modal-notify modal-info" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center ">
+                <!-- TITULO -->
+                <h4 class="modal-title white-text w-100 font-weight-bold py-2">
+                    Cambios en tupla - ASG
+                </h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="asg.hide()">
+                    <span aria-hidden="true" class="white-text">&times;</span>
+                </button>
+            </div>
+
+            <!--Body-->
+            <div class="modal-body">
+                <div class="inicio">
+                    <form class="text-center border border-light p-5 form modalstyle" action="#!">
+                        <p class="h4 mb-4">Introducir los siguientes datos:</p>
+
+                        <!-- ENo-->
+                        <input type="text" id="asg_eno" class="form-control mb-4" placeholder="ENo.">
+
+                        <!-- PNo -->
+                        <input type="text" id="asg_pno" class="form-control mb-4" placeholder="PNo.">
+
+                        <!-- Resp -->
+                        <input type="text" id="asg_resp" class="form-control mb-4" placeholder="Resp">
+
+                        <!-- Dur -->
+                        <input type="number" id="asg_dur" class="form-control mb-4" placeholder="Dur">
+
+                        <!-- Boton de Agregar -->
+                        <button type="button" class="btn btn-outline-primary" data-mdb-ripple-color="dark" type="submit"
+                            (click)="success()">
+                            Agregar
+                        </button>
+                    </form>
+                    <!-- Default form login -->
+                </div>
+            </div>
+            <!--/.Body-->
+        </div>
+
+    </div>
+
+</div>
+<!------------------------------------ FIN DE MODAL DE TABLA ASG ------------------------------------------------------------------------------>
+
+
+<!-------------------------------------- MODAL DE TABLA EMP ------------------------------------------------------------------------------>
+<div mdbModal #emp="mdbModal" class="modal fade top" id="empModalTop" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel" aria-hidden="true" style="overflow-y: auto">
+    <div class="modal-dialog modal-notify modal-info" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <!-- TITULO -->
+                <h4 class="modal-title white-text w-100 font-weight-bold py-2">
+                    Cambios en tupla - EMP
+                </h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="emp.hide()">
+                    <span aria-hidden="true" class="white-text">&times;</span>
+                </button>
+            </div>
+
+            <!--Body-->
+            <div class="modal-body">
+                <div class="inicio">
+                    <form class="text-center border border-light p-5 form modalstyle" action="#!">
+                        <p class="h4 mb-4">Introducir los siguientes datos:</p>
+
+                        <!-- ENo-->
+                        <input type="text" id="emp_eno" class="form-control mb-4" placeholder="ENo.">
+
+                        <!-- Ename -->
+                        <input type="text" id="emp_ename" class="form-control mb-4" placeholder="Ename">
+
+                        <!-- Resp -->
+                        <input type="text" id="emp_title" class="form-control mb-4" placeholder="Title">
+
+                        <!-- Boton de Agregar -->
+                        <button type="button" class="btn btn-outline-primary" data-mdb-ripple-color="dark" type="submit"
+                            (click)="success()">
+                            Agregar
+                        </button>
+                    </form>
+                    <!-- Default form login -->
+                </div>
+            </div>
+            <!--/.Body-->
+        </div>
+
+    </div>
+
+</div>
+<!------------------------------------ FIN DE MODAL DE TABLA EMP ------------------------------------------------------------------------------>
+
+
+
+<!-------------------------------------- MODAL DE TABLA PAY ------------------------------------------------------------------------------>
+<div mdbModal #pay="mdbModal" class="modal fade top" id="payModalTop" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel" aria-hidden="true" style="overflow-y: auto">
+    <div class="modal-dialog modal-notify modal-info" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <!-- TITULO -->
+                <h4 class="modal-title white-text w-100 font-weight-bold py-2">
+                    Cambios en tupla - PAY
+                </h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="pay.hide()">
+                    <span aria-hidden="true" class="white-text">&times;</span>
+                </button>
+            </div>
+
+            <!--Body-->
+            <div class="modal-body">
+                <div class="inicio">
+                    <form class="text-center border border-light p-5 form modalstyle" action="#!">
+                        <p class="h4 mb-4">Introducir los siguientes datos:</p>
+
+                        <!-- Title -->
+                        <input type="text" id="pay_title" class="form-control mb-4" placeholder="Title">
+
+                        <!-- Sal -->
+                        <input type="number" id="sal_title" class="form-control mb-4" placeholder="Sal">
+
+                        <!-- Boton de Agregar -->
+                        <button type="button" class="btn btn-outline-primary" data-mdb-ripple-color="dark" type="submit"
+                            (click)="success()">
+                            Agregar
+                        </button>
+                    </form>
+                    <!-- Default form login -->
+                </div>
+            </div>
+            <!--/.Body-->
+        </div>
+
+    </div>
+
+</div>
+<!------------------------------------ FIN DE MODAL DE TABLA PAY ------------------------------------------------------------------------------>
+
+
+<!-------------------------------------- MODAL DE TABLA PROJ ------------------------------------------------------------------------------>
+<div mdbModal #proj="mdbModal" class="modal fade top" id="projModalTop" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel" aria-hidden="true" style="overflow-y: auto">
+    <div class="modal-dialog modal-notify modal-info" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <!-- TITULO -->
+                <h4 class="modal-title white-text w-100 font-weight-bold py-2">
+                    Cambios en tupla - PROJ
+                </h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="proj.hide()">
+                    <span aria-hidden="true" class="white-text">&times;</span>
+                </button>
+            </div>
+
+            <!--Body-->
+            <div class="modal-body">
+                <div class="inicio">
+                    <form class="text-center border border-light p-5 form modalstyle" action="#!">
+                        <p class="h4 mb-4">Introducir los siguientes datos:</p>
+
+                        <!-- Proj -->
+                        <input type="text" id="proj_proj" class="form-control mb-4" placeholder="Proj">
+
+                        <!-- Pname -->
+                        <input type="text" id="proj_pname" class="form-control mb-4" placeholder="Pname">
+
+                        <!-- Budget -->
+                        <input type="number" id="proj_budget" class="form-control mb-4" placeholder="Budget">
+
+                        <!-- Boton de Agregar -->
+                        <button type="button" class="btn btn-outline-primary" data-mdb-ripple-color="dark" type="submit"
+                            (click)="success()">
+                            Agregar
+                        </button>
+                    </form>
+                    <!-- Default form login -->
+                </div>
+            </div>
+            <!--/.Body-->
+        </div>
+
+    </div>
+
+</div>
+<!------------------------------------ FIN DE MODAL DE TABLA PROJ ------------------------------------------------------------------------------>

@@ -50,5 +50,13 @@ export class BajaswinComponent implements OnInit {
     })
   }
 
-
+  error() {
+    Swal.fire({
+      position: 'center',
+      icon: 'error',
+      title: '¡los datos no han sido eliminados!',
+      showConfirmButton: false,
+      timer: 1500
+    })
+  }
 }

@@ -1,1 +1,366 @@
-<p>consultaswin works!</p>
+<div class="container">
+    <div class="inicio espacio">
+        <h3>
+            <p><b>Base de Datos: Windows > CONSULTAS</b></p>
+        </h3>
+    </div>
+    <div class="espaciodos">
+        <h4>
+            <p><b>Selecciona la tabla:</b></p>
+        </h4>
+    </div>
+    <div class="inicio">
+        <div class="card text-center tablas">
+            <div class="card-header headertabla" style="color: #fff;"><b>Opciones Disponibles:</b></div>
+
+            <!-- TABLA ASG -->
+            <ngb-accordion #acc="ngbAccordion" activeIds="config-panel-one">
+                <ngb-panel>
+                    <ng-template ngbPanelTitle>
+                        <span><b> Mostrar Todos los Datos </b></span>
+                    </ng-template>
+                    <ng-template ngbPanelContent>
+                        <h4>Tablas Encontradas:</h4>
+                        <!-- De aqui se puede usar el ngfor* para obtener todos los datos de la BD -->
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Selección</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>ASG</td>
+                                    <td>
+                                        <button type="button" class="btn btn-outline-primary"
+                                            data-mdb-ripple-color="dark" (click)="asg.show()">
+                                            Seleccionar
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>EMP</td>
+                                    <td>
+                                        <button type="button" class="btn btn-outline-primary"
+                                            data-mdb-ripple-color="dark" (click)="emp.show()">
+                                            Seleccionar
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>PAY</td>
+                                    <td>
+                                        <button type="button" class="btn btn-outline-primary"
+                                            data-mdb-ripple-color="dark" (click)="pay.show()">
+                                            Seleccionar
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td>PROJ</td>
+                                    <td>
+                                        <button type="button" class="btn btn-outline-primary"
+                                            data-mdb-ripple-color="dark" (click)="proj.show()">
+                                            Seleccionar
+                                        </button>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </ng-template>
+                </ngb-panel>
+
+                <!-- TABLA EMP -->
+                <ngb-panel>
+                    <ng-template ngbPanelTitle>
+                        <span><b> Fragmentación 1 </b></span>
+                    </ng-template>
+                    <ng-template ngbPanelContent>
+
+                        <!-- De aqui se puede usar el ngfor* para obtener todos los datos de la BD -->
+                        <table class="table table-striped">
+                            <thead>
+                                <th>*</th>
+                                <th>*</th>
+                                <th>*</th>
+                                <th>*</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <!-- Aqui va lo recuperado de la base de datos -->
+                                    <td>Info</td>
+                                    <td>Info</td>
+                                    <td>Info</td>
+                                    <td>Info</td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+
+                    </ng-template>
+                </ngb-panel>
+
+
+                <!-- TABLA PAY -->
+                <ngb-panel>
+                    <ng-template ngbPanelTitle>
+                        <span><b> Fragmentación 2 </b></span>
+                    </ng-template>
+                    <ng-template ngbPanelContent>
+                        <!-- De aqui se puede usar el ngfor* para obtener todos los datos de la BD -->
+                        <!-- De aqui se puede usar el ngfor* para obtener todos los datos de la BD -->
+                        <table class="table table-striped">
+                            <thead>
+                                <th>*</th>
+                                <th>*</th>
+                                <th>*</th>
+                                <th>*</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <!-- Aqui va lo recuperado de la base de datos -->
+                                    <td>Info</td>
+                                    <td>Info</td>
+                                    <td>Info</td>
+                                    <td>Info</td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+
+                    </ng-template>
+                </ngb-panel>
+
+                <!-- TABLA PROJ -->
+                <ngb-panel>
+                    <ng-template ngbPanelTitle>
+                        <span><b> Fragmentación 3 </b></span>
+                    </ng-template>
+                    <ng-template ngbPanelContent>
+                        <!-- De aqui se puede usar el ngfor* para obtener todos los datos de la BD -->
+                        <table class="table table-striped">
+                            <thead>
+                                <th>*</th>
+                                <th>*</th>
+                                <th>*</th>
+                                <th>*</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <!-- Aqui va lo recuperado de la base de datos -->
+                                    <td>Info</td>
+                                    <td>Info</td>
+                                    <td>Info</td>
+                                    <td>Info</td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+
+                    </ng-template>
+                </ngb-panel>
+            </ngb-accordion>
+        </div>
+
+    </div>
+    <div class="cdback regreso">
+        <a class="btn btn-secondary cdbtnback" style="background-color: #0d60a5;" routerLink="/wdb" role="button">
+            <div class="btntxtback">
+                <p><i class="fas fa-arrow-left btniconback"></i>Regresar</p>
+            </div>
+        </a>
+    </div>
+    <br><br><br><br>
+</div>
+
+
+<!---------------------MODAL DE TABLA ASG ------------------------------------------------------------------------------>
+<div mdbModal #asg="mdbModal" class="modal fade top" id="asgModalTop" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel" aria-hidden="true" style="overflow-y: auto">
+    <div class="modal-dialog modal-notify modal-info" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <!-- TITULO -->
+                <h4 class="modal-title white-text w-100 font-weight-bold py-2">
+                    Consulta - ASG
+                </h4>
+            </div>
+
+            <!--Body-->
+            <div class="modal-body">
+                <div class="inicio">
+                    <!-- De aqui se puede usar el ngfor* para obtener todos los datos de la BD -->
+                    <table class="table table-striped">
+                        <thead>
+                            <th>ID</th>
+                            <th>ENO</th>
+                            <th>PNO</th>
+                            <th>RESP</th>
+                            <th>DUR</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <!-- Aqui va lo recuperado de la base de datos -->
+                                <td>Info</td>
+                                <td>Info</td>
+                                <td>Info</td>
+                                <td>Info</td>
+                                <td>Info</td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+            <!--/.Body-->
+        </div>
+
+    </div>
+
+</div>
+<!------------------------------------ FIN DE MODAL DE TABLA ASG ------------------------------------------------------------------------------>
+
+
+<!-------------------------------------- MODAL DE TABLA EMP ------------------------------------------------------------------------------>
+<div mdbModal #emp="mdbModal" class="modal fade top" id="empModalTop" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel" aria-hidden="true" style="overflow-y: auto">
+    <div class="modal-dialog modal-notify modal-info" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <!-- TITULO -->
+                <h4 class="modal-title white-text w-100 font-weight-bold py-2">
+                    Consulta - EMP
+                </h4>
+
+            </div>
+
+            <!--Body-->
+            <div class="modal-body">
+                <div class="inicio">
+                    <!-- De aqui se puede usar el ngfor* para obtener todos los datos de la BD -->
+                    <table class="table table-striped">
+                        <thead>
+                            <th>ID</th>
+                            <th>ENO</th>
+                            <th>ENAME</th>
+                            <th>TITLE</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <!-- Aqui va lo recuperado de la base de datos -->
+                                <td>Info</td>
+                                <td>Info</td>
+                                <td>Info</td>
+                                <td>Info</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!--/.Body-->
+        </div>
+
+    </div>
+
+</div>
+<!------------------------------------ FIN DE MODAL DE TABLA EMP ------------------------------------------------------------------------------>
+
+
+
+<!-------------------------------------- MODAL DE TABLA PAY ------------------------------------------------------------------------------>
+<div mdbModal #pay="mdbModal" class="modal fade top" id="payModalTop" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel" aria-hidden="true" style="overflow-y: auto">
+    <div class="modal-dialog modal-notify modal-info" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <!-- TITULO -->
+                <h4 class="modal-title white-text w-100 font-weight-bold py-2">
+                    Consulta - PAY
+                </h4>
+
+            </div>
+
+            <!--Body-->
+            <div class="modal-body">
+                <div class="inicio">
+                    <!-- De aqui se puede usar el ngfor* para obtener todos los datos de la BD -->
+                    <table class="table table-striped">
+                        <thead>
+                            <th>ID</th>
+                            <th>TITLE</th>
+                            <th>SAL</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <!-- Aqui va lo recuperado de la base de datos -->
+                                <td>Info</td>
+                                <td>Info</td>
+                                <td>Info</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!--/.Body-->
+        </div>
+
+    </div>
+
+</div>
+<!------------------------------------ FIN DE MODAL DE TABLA PAY ------------------------------------------------------------------------------>
+
+
+<!-------------------------------------- MODAL DE TABLA PROJ ------------------------------------------------------------------------------>
+<div mdbModal #proj="mdbModal" class="modal fade top" id="projModalTop" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel" aria-hidden="true" style="overflow-y: auto">
+    <div class="modal-dialog modal-notify modal-info" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <!-- TITULO -->
+                <h4 class="modal-title white-text w-100 font-weight-bold py-2">
+                    Consulta - PROJ
+                </h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="proj.hide()">
+                    <span aria-hidden="true" class="white-text">&times;</span>
+                </button>
+            </div>
+
+            <!--Body-->
+            <div class="modal-body">
+                <div class="inicio">
+                    <!-- De aqui se puede usar el ngfor* para obtener todos los datos de la BD -->
+                    <table class="table table-striped">
+                        <thead>
+                            <th>ID</th>
+                            <th>PNO</th>
+                            <th>PNAME</th>
+                            <th>BUDGET</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <!-- Aqui va lo recuperado de la base de datos -->
+                                <td>Info</td>
+                                <td>Info</td>
+                                <td>Info</td>
+                                <td>Info</td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+            <!--/.Body-->
+        </div>
+
+    </div>
+
+</div>
+<!------------------------------------ FIN DE MODAL DE TABLA PROJ ------------------------------------------------------------------------------>

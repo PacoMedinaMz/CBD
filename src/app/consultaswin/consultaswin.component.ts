@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbAccordionConfig } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-consultaswin',
@@ -7,8 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConsultaswinComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(config: NgbAccordionConfig) {
+    config.closeOthers = true;
+  }
   ngOnInit(): void {
   }
 

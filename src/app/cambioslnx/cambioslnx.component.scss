@@ -1,0 +1,103 @@
+.inicio {
+    display: flex;
+    justify-content: center;
+    align-self: center;  
+  }
+
+  .cdini{
+      margin: 30px;
+      border-radius: 30px;
+  }
+
+  
+  .btnicon{
+    margin-top: 100px;
+    font-size: 90px;
+}
+
+.titulo{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    margin-bottom: 15px;
+    margin-top: 100px;
+}
+
+.cdbtn{
+    width: auto;
+    height: 305px;
+    border-radius: 30px;
+}
+
+.btntxt{
+    justify-content: center;
+    align-self: center;
+    align-content: center; 
+    margin-top: 22px;
+    font-size: 25px;
+}
+.form{
+    margin-top: 30px;
+}
+
+.espacio{
+    display: flex;
+    justify-content: center;
+    align-self: center;  
+    margin-top: 15px;
+}
+
+.espaciodos{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+.tablas{
+    width: 800px;
+}
+
+.headertabla{
+    background-color: #a446f1;
+}
+
+
+
+.cdbtnback {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 200px;
+    height: 50px;
+    border-radius: 30px;
+    
+}
+
+.btniconback {
+    font-size: 20px;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.btntxtback {
+    justify-content: center;
+    align-self: center;
+    align-content: center;
+    margin-top: 15px;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+
+.regreso{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    margin-top: 15px;
+}
+
+
+.modalstyle{
+    border-radius: 25px;
+    
+}

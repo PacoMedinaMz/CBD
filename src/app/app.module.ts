@@ -21,6 +21,7 @@ import { AltaslnxComponent } from './altaslnx/altaslnx.component';
 import { BajaslnxComponent } from './bajaslnx/bajaslnx.component';
 import { CambioslnxComponent } from './cambioslnx/cambioslnx.component';
 import { ConsultaslnxComponent } from './consultaslnx/consultaslnx.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { ConsultaslnxComponent } from './consultaslnx/consultaslnx.component';
     MDBBootstrapModule.forRoot(),
     FormsModule,
     AppRoutingModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
