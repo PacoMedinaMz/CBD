@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { initConnection, exect } = require("../MySQLHandler");
+const { initConnection, exect, isDatabasesOnline } = require("../MySQLHandler");
 
 //BD de Windows
 let conn = undefined;
@@ -22,6 +22,43 @@ router.get("/", (req, res) => {
 });
 
 router.post("/", (req, res) => {
+  let query = req.body.query;
+
+  //Si las bases de datos están en linea...
+  isDatabasesOnline(conn, conn2)
+    .then(() => {
+      conn.query(query, function (err, rows) {
+        if (err) {
+          res.status(500).json({
+            mensaje:
+              "Error al ejecutar en la base de datos " + conn.config.user,
+            error: err,
+          });
+        } else {
+          conn2.query(query, function (err2, rows2) {
+            if (err2) {
+              res.status(500).json({
+                mensaje:
+                  "Error al ejecutar en la base de datos " + conn2.config.user,
+                error: err2,
+              });
+            } else {
+              res.status(200).json({ mensaje: "ok", bd1: rows, bd2: rows2 });
+            }
+          });
+        }
+      });
+    })
+    .catch((err) => {
+      res.status(500).json({
+        mensaje:
+          "No se puede ejecutar la consulta porque una base de datos no responde.",
+        error: err,
+      });
+    });
+});
+
+router.put("/", (req, res) => {
   let query = req.body.query;
 
   //Si las bases de datos están en linea...

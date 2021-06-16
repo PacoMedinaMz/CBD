@@ -27,6 +27,43 @@ router.post("/", (req, res) => {
   //Si las bases de datos están en linea...
   isDatabasesOnline(conn, conn2)
     .then(() => {
+      conn.query(query, function (err, rows) {
+        if (err) {
+          res.status(500).json({
+            mensaje:
+              "Error al ejecutar en la base de datos " + conn.config.user,
+            error: err,
+          });
+        } else {
+          conn2.query(query, function (err2, rows2) {
+            if (err2) {
+              res.status(500).json({
+                mensaje:
+                  "Error al ejecutar en la base de datos " + conn2.config.user,
+                error: err2,
+              });
+            } else {
+              res.status(200).json({ mensaje: "ok", bd1: rows, bd2: rows2 });
+            }
+          });
+        }
+      });
+    })
+    .catch((err) => {
+      res.status(500).json({
+        mensaje:
+          "No se puede ejecutar la consulta porque una base de datos no responde.",
+        error: err,
+      });
+    });
+});
+
+router.put("/", (req, res) => {
+  let query = req.body.query;
+
+  //Si las bases de datos están en linea...
+  isDatabasesOnline(conn, conn2)
+    .then(() => {
       //Ejecutamos en la primera base de datos
       exect(query, conn)
         .then(() => {
@@ -44,13 +81,11 @@ router.post("/", (req, res) => {
         });
     })
     .catch((err) => {
-      res
-        .status(500)
-        .json({
-          mensaje:
-            "No se puede ejecutar la consulta porque una base de datos no responde.",
-          error: err,
-        });
+      res.status(500).json({
+        mensaje:
+          "No se puede ejecutar la consulta porque una base de datos no responde.",
+        error: err,
+      });
     });
 });
 
