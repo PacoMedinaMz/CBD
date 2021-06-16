@@ -2,7 +2,16 @@ const express = require("express"); //importar express
 const mysql = require("mysql");
 const cors = require("cors");
 
+//BD de Linux
 const connection = mysql.createConnection({
+  host: "192.168.1.78",
+  user: "paco",
+  password: "Mysql2021+",
+  database: "replicalnx",
+});
+
+//BD réplica de Linux
+const connection2 = mysql.createConnection({
   host: "192.168.1.78",
   user: "paco",
   password: "Mysql2021+",

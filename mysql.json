@@ -1,0 +1,26 @@
+{
+  "windows": {
+    "host": "localhost",
+    "user": "user",
+    "password": "passwd",
+    "database": "db"
+  },
+  "rwindows": {
+    "host": "localhost",
+    "user": "user",
+    "password": "passwd",
+    "database": "db"
+  },
+  "linux": {
+    "host": "localhost",
+    "user": "user",
+    "password": "passwd",
+    "database": "db"
+  },
+  "rlinux": {
+    "host": "localhost",
+    "user": "user",
+    "password": "passwd",
+    "database": "db"
+  }
+}
