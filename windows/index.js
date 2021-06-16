@@ -23,6 +23,15 @@ router.get("/", (req, res) => {
 
 router.post("/", (req, res) => {
   let query = req.body.query;
+  if (!query) {
+    res
+      .status(500)
+      .json({
+        error:
+          "Sintaxis incorrecta, no se encuentra el campo 'query' en tu JSON.",
+      });
+    return;
+  }
 
   //Si las bases de datos están en linea...
   isDatabasesOnline(conn, conn2)
@@ -60,6 +69,15 @@ router.post("/", (req, res) => {
 
 router.put("/", (req, res) => {
   let query = req.body.query;
+  if (!query) {
+    res
+      .status(500)
+      .json({
+        error:
+          "Sintaxis incorrecta, no se encuentra el campo 'query' en tu JSON.",
+      });
+    return;
+  }
 
   //Si las bases de datos están en linea...
   isDatabasesOnline(conn, conn2)
