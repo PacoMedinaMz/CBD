@@ -4,7 +4,7 @@ const cors = require("cors");
 var windowsRouters = require("./windows/index");
 var linuxRouters = require("./linux/index");
 
-const app = express().use(cors()); //crea al servidor
+const app = express().use(cors()).use(express.json()); //crea al servidor
 const port = process.env.PORT || 3003;
 
 app.get("/", (req, res) => {

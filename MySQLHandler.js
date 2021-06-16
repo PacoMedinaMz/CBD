@@ -26,4 +26,47 @@ function initConnection(credencial) {
   return conn;
 }
 
-module.exports = initConnection;
+function exect(query, conn) {
+  return new Promise((resolve, reject) => {
+    conn.query(query, function (err) {
+      if (err) {
+        reject(err);
+      } else {
+        resolve();
+      }
+    });
+  });
+}
+
+//Función que verifica si la base de datos está online
+function isOnline(conn) {
+  return new Promise((resolve, reject) => {
+    conn.ping((err) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve();
+      }
+    });
+  });
+}
+
+function isDatabasesOnline(conn, conn2) {
+  return new Promise((resolve, reject) => {
+    isOnline(conn) //Verificamos la primera base de datos
+      .then(() => {
+        isOnline(conn2) //Verificamos la segunda base de datos
+          .then(() => {
+            resolve();
+          })
+          .catch((err) => reject(err));
+      })
+      .catch((err) => reject(err));
+  });
+}
+
+module.exports = {
+  initConnection: initConnection,
+  exect: exect,
+  isDatabasesOnline: isDatabasesOnline,
+};
