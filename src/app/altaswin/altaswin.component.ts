@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
 import { FormGroup, FormControl } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+
+const ip = "192.168.1.76"
 
 @Component({
   selector: 'app-altaswin',
@@ -34,9 +37,8 @@ export class AltaswinComponent implements OnInit {
     budget: new FormControl('')
   });
 
-  constructor() {
-    console.log("Hola");
-
+  constructor(private http: HttpClient) { 
+    console.log(`http://${ip}:3003/windows/${"altaAsg"}`); 
   }
 
   ngOnInit(): void {
@@ -65,13 +67,17 @@ export class AltaswinComponent implements OnInit {
   clickEnviarAsg () {
     var e = this.asgForm.value.eno;
     var p = this.asgForm.value.pno;
-    var resp = this.asgForm.value.resp;
-    var dur = this.asgForm.value.dur;
+    var r = this.asgForm.value.resp;
+    var d = this.asgForm.value.dur;
+    //console.log(e, p, resp, dur); no toma los valores 
 
     var eno = "E";
-    eno += e.toString();
+    eno.concat(e.toString());
     var pno = "P";
-    pno += p.toString();
+    pno.concat(p.toString());
+
+    var resp = r.toString();
+    var dur = d.toString();
 
     var asgJson =
     {
@@ -81,34 +87,86 @@ export class AltaswinComponent implements OnInit {
       "dur": dur
     };
 
-    console.log(asgJson);
+    this.http.post<any>('http://192.168.1.76:3003/windows/altaAsg', asgJson).subscribe({
+      next: data => {  
+        if (data.status === 'error') {
+          this.error();
+        } else {
+          this.success();
+        }
+      },
+      error: error => {
+        console.error('ERROR al generar reporte', error.message);
+      }
+    })
+
+    this.http.post<any>('http://192.168.1.76:3003/linux/altaAsgR', asgJson).subscribe({
+      next: data => {  
+        if (data.status === 'error') {
+          this.error();
+        } else {
+          this.success();
+        }
+      },
+      error: error => {
+        console.error('ERROR al generar reporte', error.message);
+      }
+    })
   }
 
   clickEnviarEmp () {
     var e = this.empForm.value.emp;
-    var ename = this.empForm.value.ename;
-    var title = this.empForm.value.title;;
+    var en = this.empForm.value.ename;
+    var t = this.empForm.value.title;;
 
     var eno = "E";
-    eno += e.toString();
+    eno.concat(e.toString());
+    var ename = en.toString();
+    var title = t.toString();
 
-    var enoJson =
+    var empJson =
     {
       "eno": eno,
       "ename": ename,
       "title": title
     };
 
-    console.log(enoJson);
+    this.http.post<any>('http://192.168.1.76:3003/windows/altaEno', empJson).subscribe({
+      next: data => {  
+        if (data.status === 'error') {
+          this.error();
+        } else {
+          this.success();
+        }
+      },
+      error: error => {
+        console.error('ERROR al generar reporte', error.message);
+      }
+    })
+
+    this.http.post<any>('http://192.168.1.76:3003/linux/altaEnoR', empJson).subscribe({
+      next: data => {  
+        if (data.status === 'error') {
+          this.error();
+        } else {
+          this.success();
+        }
+      },
+      error: error => {
+        console.error('ERROR al generar reporte', error.message);
+      }
+    })
   }
 
   clickEnviarPay () {
     var p = this.payForm.value.payno;
-    var title = this.payForm.value.title;
-    var sal = this.payForm.value.sal;
+    var t = this.payForm.value.title;
+    var s = this.payForm.value.sal;
 
     var payno = "Py";
-    payno += p.toString();
+    payno.concat(p.toString());
+    var title = t.toString();
+    var sal = s.toString();
 
     var payJson =
     {
@@ -117,16 +175,43 @@ export class AltaswinComponent implements OnInit {
       "sal": sal
     };
 
-    console.log(payJson);
+    this.http.post<any>('http://192.168.1.76:3003/windows/altaPay', payJson).subscribe({
+      next: data => {  
+        if (data.status === 'error') {
+          this.error();
+        } else {
+          this.success();
+        }
+      },
+      error: error => {
+        console.error('ERROR al generar reporte', error.message);
+      }
+    })
+
+    this.http.post<any>('http://192.168.1.76:3003/linux/altaPayR', payJson).subscribe({
+      next: data => {  
+        if (data.status === 'error') {
+          this.error();
+        } else {
+          this.success();
+        }
+      },
+      error: error => {
+        console.error('ERROR al generar reporte', error.message);
+      }
+    })
+
   }
 
   clickEnviarProj () {
     var p = this.projForm.value.pno;
-    var pname = this.projForm.value.pname;
-    var budget = this.projForm.value.budget;
+    var pn = this.projForm.value.pname;
+    var b = this.projForm.value.budget;
 
     var pno = "P";
-    pno += p.toString();
+    pno.concat(p.toString());
+    var pname = pn.toString();
+    var budget = b.toString();
 
     var projJson =
     {
@@ -135,23 +220,31 @@ export class AltaswinComponent implements OnInit {
       "budget": budget
     };
 
-    console.log(projJson);
-  }
-
-  enviar(){
-    /*
-    this.http.post<any>('http://m.pacomedina.mx:4201/crud/final', jPuesto).subscribe({
-      next: data => {
+    this.http.post<any>('http://192.168.1.76:3003/windows/altaProj', projJson).subscribe({
+      next: data => {  
         if (data.status === 'error') {
-          this.sendError("No se pudo generar reporte a causa de error del servidor.");
+          this.error();
         } else {
-          this.registerSuccess();
+          this.success();
         }
-
       },
       error: error => {
         console.error('ERROR al generar reporte', error.message);
       }
-    })*/
+    })
+
+    this.http.post<any>('http://192.168.1.76:3003/linux/altaProjR', projJson).subscribe({
+      next: data => {  
+        if (data.status === 'error') {
+          this.error();
+        } else {
+          this.success();
+        }
+      },
+      error: error => {
+        console.error('ERROR al generar reporte', error.message);
+      }
+    })
+
   }
 }

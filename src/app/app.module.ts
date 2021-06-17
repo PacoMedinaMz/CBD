@@ -22,6 +22,7 @@ import { BajaslnxComponent } from './bajaslnx/bajaslnx.component';
 import { CambioslnxComponent } from './cambioslnx/cambioslnx.component';
 import { ConsultaslnxComponent } from './consultaslnx/consultaslnx.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FormsModule,
     AppRoutingModule,
     NgbModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
