@@ -101,24 +101,29 @@
             <!--Body-->
             <div class="modal-body">
                 <div class="inicio">
-                    <form class="text-center border border-light p-5 form modalstyle" action="#!">
+                    <form class="text-center border border-light p-5 form modalstyle" 
+                        formGroup="asgForm" id = "ags" name = "asg">
                         <p class="h4 mb-4">Introducir los siguientes datos:</p>
 
                         <!-- ENo-->
-                        <input type="text" id="asg_eno" class="form-control mb-4" placeholder="ENo.">
+                        <input type="number" id="asg_eno" class="form-control mb-4" placeholder="ENo."
+                            name = asg_eno>
 
                         <!-- PNo -->
-                        <input type="text" id="asg_pno" class="form-control mb-4" placeholder="PNo.">
+                        <input type="number" id="asg_pno" class="form-control mb-4" placeholder="PNo."
+                            name = "asg_pno">
 
                         <!-- Resp -->
-                        <input type="text" id="asg_resp" class="form-control mb-4" placeholder="Resp">
+                        <input type="text" id="asg_resp" class="form-control mb-4" placeholder="Resp."
+                            name = "asg_resp">
 
                         <!-- Dur -->
-                        <input type="number" id="asg_dur" class="form-control mb-4" placeholder="Dur">
+                        <input type="number" id="asg_dur" class="form-control mb-4" placeholder="Dur."
+                            name = "asg_dur">
 
                         <!-- Boton de Agregar -->
                         <button type="button" class="btn btn-outline-primary" data-mdb-ripple-color="dark"
-                            type="submit" (click)="success()">
+                            type="submit" (click)="clickEnviarAsg">
                             Agregar
                         </button>
                     </form>
@@ -152,17 +157,22 @@
             <!--Body-->
             <div class="modal-body">
                 <div class="inicio">
-                    <form class="text-center border border-light p-5 form modalstyle" action="#!">
+                    <form class="text-center border border-light p-5 form modalstyle"
+                        formGroup = "empFrom" id = "emp" name = "emp">
+                        
                         <p class="h4 mb-4">Introducir los siguientes datos:</p>
 
                         <!-- ENo-->
-                        <input type="text" id="emp_eno" class="form-control mb-4" placeholder="ENo.">
+                        <input type="number" id="emp_eno" class="form-control mb-4" placeholder="ENo."
+                            name = "emp_eno">
 
                         <!-- Ename -->
-                        <input type="text" id="emp_ename" class="form-control mb-4" placeholder="Ename">
+                        <input type="text" id="emp_ename" class="form-control mb-4" placeholder="EName."
+                            name = "emp_ename">
 
-                        <!-- Resp -->
-                        <input type="text" id="emp_title" class="form-control mb-4" placeholder="Title">
+                        <!-- Title -->
+                        <input type="text" id="emp_title" class="form-control mb-4" placeholder="Title."
+                            name = "emp_title">
 
                         <!-- Boton de Agregar -->
                         <button type="button" class="btn btn-outline-primary" data-mdb-ripple-color="dark"
@@ -189,6 +199,7 @@
     <div class="modal-dialog modal-notify modal-info" role="document">
         <div class="modal-content">
             <div class="modal-header text-center">
+                
                 <!-- TITULO -->
                 <h4 class="modal-title white-text w-100 font-weight-bold py-2">
                     Alta en tabla - PAY
@@ -201,14 +212,21 @@
             <!--Body-->
             <div class="modal-body">
                 <div class="inicio">
-                    <form class="text-center border border-light p-5 form modalstyle" action="#!">
+                    <form class="text-center border border-light p-5 form modalstyle"
+                        formGroup = "payForm" id = "pay" name = "pay">
                         <p class="h4 mb-4">Introducir los siguientes datos:</p>
 
+                        <!-- PayNo-->
+                        <input type="number" id="pay_payno" class="form-control mb-4" placeholder="PayNo."
+                            name = "pay_payno"> 
+
                         <!-- Title -->
-                        <input type="text" id="pay_title" class="form-control mb-4" placeholder="Title">
+                        <input type="text" id="pay_title" class="form-control mb-4" placeholder="Title."
+                            name = "pay_title">
 
                         <!-- Sal -->
-                        <input type="number" id="sal_title" class="form-control mb-4" placeholder="Sal">
+                        <input type="number" id="pay_sal" class="form-control mb-4" placeholder="Sal."
+                            name = "pay_sal">
 
                         <!-- Boton de Agregar -->
                         <button type="button" class="btn btn-outline-primary" data-mdb-ripple-color="dark"
@@ -246,17 +264,21 @@
             <!--Body-->
             <div class="modal-body">
                 <div class="inicio">
-                    <form class="text-center border border-light p-5 form modalstyle" action="#!">
+                    <form class="text-center border border-light p-5 form modalstyle"
+                        formGroup = "projForm" id = "proj" name = "proj">
                         <p class="h4 mb-4">Introducir los siguientes datos:</p>
 
-                        <!-- Proj -->
-                        <input type="text" id="proj_proj" class="form-control mb-4" placeholder="Proj">
+                        <!-- Pno-->
+                        <input type="text" id="proj_pno" class="form-control mb-4" placeholder="PNo."
+                            name="proj_pno">
 
                         <!-- Pname -->
-                        <input type="text" id="proj_pname" class="form-control mb-4" placeholder="Pname">
+                        <input type="text" id="proj_pname" class="form-control mb-4" placeholder="PName."
+                            name="proj_pname">
 
                         <!-- Budget -->
-                        <input type="number" id="proj_budget" class="form-control mb-4" placeholder="Budget">
+                        <input type="number" id="proj_budget" class="form-control mb-4" placeholder="Budget."
+                            name="proj_budget">
 
                         <!-- Boton de Agregar -->
                         <button type="button" class="btn btn-outline-primary" data-mdb-ripple-color="dark"
@@ -274,6 +296,3 @@
 
 </div>
 <!------------------------------------ FIN DE MODAL DE TABLA PROJ ------------------------------------------------------------------------------>
-
-
-
