@@ -9,35 +9,39 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./altaslnx.component.scss']
 })
 export class AltaslnxComponent implements OnInit {
+  asgForm: FormGroup;
 
-  asgForm = new FormGroup({
-    eno: new FormControl(''),
-    pno: new FormControl(''),
-    resp: new FormControl(''),
-    dur: new FormControl('')
-  });
+  empForm: FormGroup;
 
-  empForm = new FormGroup({
-    eno: new FormControl(''),
-    ename: new FormControl(''),
-    title: new FormControl('')
-  });
+  payForm: FormGroup;
 
-  payForm = new FormGroup({
-    payno: new FormControl(''),
-    title: new FormControl(''),
-    sal: new FormControl('')
-  });
-
-  projForm = new FormGroup({
-    pno: new FormControl(''),
-    pname: new FormControl(''),
-    budget: new FormControl('')
-  });
+  projForm: FormGroup;
 
   constructor() {
-
-
+    this.asgForm = new FormGroup({
+      eno: new FormControl(''),
+      pno: new FormControl(''),
+      resp: new FormControl(''),
+      dur: new FormControl('')
+    });
+  
+    this.empForm = new FormGroup({
+      eno: new FormControl(''),
+      ename: new FormControl(''),
+      title: new FormControl('')
+    });
+  
+    this.payForm = new FormGroup({
+      payno: new FormControl(''),
+      title: new FormControl(''),
+      sal: new FormControl('')
+    });
+  
+    this.projForm = new FormGroup({
+      pno: new FormControl(''),
+      pname: new FormControl(''),
+      budget: new FormControl('')
+    });
   }
 
   ngOnInit(): void {
@@ -64,16 +68,14 @@ export class AltaslnxComponent implements OnInit {
     })
   }
 
-  clickEnviarAsg () {
+  clickEnviarAsg () {    
     var e = this.asgForm.value.eno;
     var p = this.asgForm.value.pno;
     var resp = this.asgForm.value.resp;
     var dur = this.asgForm.value.dur;
 
-    var eno = "E";
-    eno += e.toString();
-    var pno = "P";
-    pno += p.toString();
+    var eno = `P${e}`;
+    var pno = `E${p}`;
 
     var asgJson =
     {
@@ -82,35 +84,64 @@ export class AltaslnxComponent implements OnInit {
       "resp": resp,
       "dur": dur
     };
+    
+    fetch('http://localhost:3003/linux/altaAsg', {
+      method: 'POST',
+      headers: {
+        'Content-Type': "application/json"
+      }, body: JSON.stringify(asgJson)
+    }).then(() => {
+      console.log("Datos enviados...")
+    })
 
-    console.log(asgJson);
+    fetch('http://localhost:3003/linux/altaAsgR', {
+      method: 'POST',
+      headers: {
+        'Content-Type': "application/json"
+      }, body: JSON.stringify(asgJson)
+    }).then(() => {
+      console.log("Datos enviados...")
+    })
   }
 
   clickEnviarEmp () {
-    var e = this.empForm.value.eno;
+    var e = this.empForm.value.emp;
     var ename = this.empForm.value.ename;
-    var title = this.empForm.value.title;
+    var title = this.empForm.value.title;;
+    var eno = `E${e}`;
 
-    var eno = "E";
-    eno += e.toString();
-
-    var enoJson =
+    var empJson =
     {
       "eno": eno,
       "ename": ename,
       "title": title
     };
 
-    console.log(enoJson);
+    fetch('http://localhost:3003/linux/altaEmp', {
+      method: 'POST',
+      headers: {
+        'Content-Type': "application/json"
+      }, body: JSON.stringify(empJson)
+    }).then(() => {
+      console.log("Datos enviados...")
+    })
+
+    fetch('http://localhost:3003/linux/altaEmpR', {
+      method: 'POST',
+      headers: {
+        'Content-Type': "application/json"
+      }, body: JSON.stringify(empJson)
+    }).then(() => {
+      console.log("Datos enviados...")
+    })
+
   }
 
   clickEnviarPay () {
     var p = this.payForm.value.payno;
     var title = this.payForm.value.title;
     var sal = this.payForm.value.sal;
-
-    var payno = "Py";
-    payno += p.toString();
+    var payno = `Py${p}`;
 
     var payJson =
     {
@@ -119,16 +150,31 @@ export class AltaslnxComponent implements OnInit {
       "sal": sal
     };
 
-    console.log(payJson);
+    fetch('http://localhost:3003/linux/altaPay', {
+      method: 'POST',
+      headers: {
+        'Content-Type': "application/json"
+      }, body: JSON.stringify(payJson)
+    }).then(() => {
+      console.log("Datos enviados...")
+    })
+
+    fetch('http://localhost:3003/linux/altaPayR', {
+      method: 'POST',
+      headers: {
+        'Content-Type': "application/json"
+      }, body: JSON.stringify(payJson)
+    }).then(() => {
+      console.log("Datos enviados...")
+    })
+
   }
 
   clickEnviarProj () {
     var p = this.projForm.value.pno;
     var pname = this.projForm.value.pname;
     var budget = this.projForm.value.budget;
-
-    var pno = "P";
-    pno += p.toString();
+    var pno = `P${p}`;
 
     var projJson =
     {
@@ -137,23 +183,23 @@ export class AltaslnxComponent implements OnInit {
       "budget": budget
     };
 
-    console.log(projJson);
-  }
+    fetch('http://localhost:3003/linux/altaProj', {
+      method: 'POST',
+      headers: {
+        'Content-Type': "application/json"
+      }, body: JSON.stringify(projJson)
+    }).then(() => {
+      console.log("Datos enviados...")
+    })
 
-  enviar(){
-    /*
-    this.http.post<any>('http://m.pacomedina.mx:4201/crud/final', jPuesto).subscribe({
-      next: data => {
-        if (data.status === 'error') {
-          this.sendError("No se pudo generar reporte a causa de error del servidor.");
-        } else {
-          this.registerSuccess();
-        }
+    fetch('http://localhost:3003/linux/altaProjR', {
+      method: 'POST',
+      headers: {
+        'Content-Type': "application/json"
+      }, body: JSON.stringify(projJson)
+    }).then(() => {
+      console.log("Datos enviados...")
+    })
 
-      },
-      error: error => {
-        console.error('ERROR al generar reporte', error.message);
-      }
-    })*/
   }
 }

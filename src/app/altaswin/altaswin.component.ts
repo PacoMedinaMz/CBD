@@ -72,25 +72,14 @@ export class AltaswinComponent implements OnInit {
     })
   }
 
-  clickEnviarAsg () {
-    if (true) {
-      console.log(this.asgForm);
-      
-      return false;
-    }
+  clickEnviarAsg () {    
     var e = this.asgForm.value.eno;
     var p = this.asgForm.value.pno;
-    var r = this.asgForm.value.resp;
-    var d = this.asgForm.value.dur;
-    //console.log(e, p, resp, dur); no toma los valores 
+    var resp = this.asgForm.value.resp;
+    var dur = this.asgForm.value.dur;
 
-    var eno = "E";
-    eno.concat(e.toString());
-    var pno = "P";
-    pno.concat(p.toString());
-
-    var resp = r.toString();
-    var dur = d.toString();
+    var eno = `P${e}`;
+    var pno = `E${p}`;
 
     var asgJson =
     {
@@ -99,48 +88,31 @@ export class AltaswinComponent implements OnInit {
       "resp": resp,
       "dur": dur
     };
-
-    this.http.post<any>('http://192.168.1.76:3003/windows/altaAsg', asgJson).subscribe({
-      next: data => {  
-        if (data.status === 'error') {
-          this.error();
-        } else {
-          this.success();
-        }
-      },
-      error: error => {
-        console.error('ERROR al generar reporte', error.message);
-      }
+    
+    fetch('http://localhost:3003/windows/altaAsg', {
+      method: 'POST',
+      headers: {
+        'Content-Type': "application/json"
+      }, body: JSON.stringify(asgJson)
+    }).then(() => {
+      console.log("Datos enviados...")
     })
 
-    this.http.post<any>('http://192.168.1.76:3003/linux/altaAsgR', asgJson).subscribe({
-      next: data => {  
-        if (data.status === 'error') {
-          this.error();
-        } else {
-          this.success();
-        }
-      },
-      error: error => {
-        console.error('ERROR al generar reporte', error.message);
-      }
+    fetch('http://localhost:3003/windows/altaAsgR', {
+      method: 'POST',
+      headers: {
+        'Content-Type': "application/json"
+      }, body: JSON.stringify(asgJson)
+    }).then(() => {
+      console.log("Datos enviados...")
     })
   }
 
   clickEnviarEmp () {
-    if (true) {
-      console.log(this.empForm);
-      
-      return false;
-    }
     var e = this.empForm.value.emp;
-    var en = this.empForm.value.ename;
-    var t = this.empForm.value.title;;
-
-    var eno = "E";
-    eno.concat(e.toString());
-    var ename = en.toString();
-    var title = t.toString();
+    var ename = this.empForm.value.ename;
+    var title = this.empForm.value.title;;
+    var eno = `E${e}`;
 
     var empJson =
     {
@@ -149,47 +121,31 @@ export class AltaswinComponent implements OnInit {
       "title": title
     };
 
-    this.http.post<any>('http://192.168.1.76:3003/windows/altaEno', empJson).subscribe({
-      next: data => {  
-        if (data.status === 'error') {
-          this.error();
-        } else {
-          this.success();
-        }
-      },
-      error: error => {
-        console.error('ERROR al generar reporte', error.message);
-      }
+    fetch('http://localhost:3003/windows/altaEmp', {
+      method: 'POST',
+      headers: {
+        'Content-Type': "application/json"
+      }, body: JSON.stringify(empJson)
+    }).then(() => {
+      console.log("Datos enviados...")
     })
 
-    this.http.post<any>('http://192.168.1.76:3003/linux/altaEnoR', empJson).subscribe({
-      next: data => {  
-        if (data.status === 'error') {
-          this.error();
-        } else {
-          this.success();
-        }
-      },
-      error: error => {
-        console.error('ERROR al generar reporte', error.message);
-      }
+    fetch('http://localhost:3003/windows/altaEmpR', {
+      method: 'POST',
+      headers: {
+        'Content-Type': "application/json"
+      }, body: JSON.stringify(empJson)
+    }).then(() => {
+      console.log("Datos enviados...")
     })
+
   }
 
   clickEnviarPay () {
-    if (true) {
-      console.log(this.payForm);
-      
-      return false;
-    }
     var p = this.payForm.value.payno;
-    var t = this.payForm.value.title;
-    var s = this.payForm.value.sal;
-
-    var payno = "Py";
-    payno.concat(p.toString());
-    var title = t.toString();
-    var sal = s.toString();
+    var title = this.payForm.value.title;
+    var sal = this.payForm.value.sal;
+    var payno = `Py${p}`;
 
     var payJson =
     {
@@ -198,48 +154,31 @@ export class AltaswinComponent implements OnInit {
       "sal": sal
     };
 
-    this.http.post<any>('http://192.168.1.76:3003/windows/altaPay', payJson).subscribe({
-      next: data => {  
-        if (data.status === 'error') {
-          this.error();
-        } else {
-          this.success();
-        }
-      },
-      error: error => {
-        console.error('ERROR al generar reporte', error.message);
-      }
+    fetch('http://localhost:3003/windows/altaPay', {
+      method: 'POST',
+      headers: {
+        'Content-Type': "application/json"
+      }, body: JSON.stringify(payJson)
+    }).then(() => {
+      console.log("Datos enviados...")
     })
 
-    this.http.post<any>('http://192.168.1.76:3003/linux/altaPayR', payJson).subscribe({
-      next: data => {  
-        if (data.status === 'error') {
-          this.error();
-        } else {
-          this.success();
-        }
-      },
-      error: error => {
-        console.error('ERROR al generar reporte', error.message);
-      }
+    fetch('http://localhost:3003/windows/altaPayR', {
+      method: 'POST',
+      headers: {
+        'Content-Type': "application/json"
+      }, body: JSON.stringify(payJson)
+    }).then(() => {
+      console.log("Datos enviados...")
     })
 
   }
 
   clickEnviarProj () {
-    if (true) {
-      console.log(this.projForm);
-      
-      return false;
-    }
     var p = this.projForm.value.pno;
-    var pn = this.projForm.value.pname;
-    var b = this.projForm.value.budget;
-
-    var pno = "P";
-    pno.concat(p.toString());
-    var pname = pn.toString();
-    var budget = b.toString();
+    var pname = this.projForm.value.pname;
+    var budget = this.projForm.value.budget;
+    var pno = `P${p}`;
 
     var projJson =
     {
@@ -248,30 +187,22 @@ export class AltaswinComponent implements OnInit {
       "budget": budget
     };
 
-    this.http.post<any>('http://192.168.1.76:3003/windows/altaProj', projJson).subscribe({
-      next: data => {  
-        if (data.status === 'error') {
-          this.error();
-        } else {
-          this.success();
-        }
-      },
-      error: error => {
-        console.error('ERROR al generar reporte', error.message);
-      }
+    fetch('http://localhost:3003/windows/altaProj', {
+      method: 'POST',
+      headers: {
+        'Content-Type': "application/json"
+      }, body: JSON.stringify(projJson)
+    }).then(() => {
+      console.log("Datos enviados...")
     })
 
-    this.http.post<any>('http://192.168.1.76:3003/linux/altaProjR', projJson).subscribe({
-      next: data => {  
-        if (data.status === 'error') {
-          this.error();
-        } else {
-          this.success();
-        }
-      },
-      error: error => {
-        console.error('ERROR al generar reporte', error.message);
-      }
+    fetch('http://localhost:3003/windows/altaProjR', {
+      method: 'POST',
+      headers: {
+        'Content-Type': "application/json"
+      }, body: JSON.stringify(projJson)
+    }).then(() => {
+      console.log("Datos enviados...")
     })
 
   }
