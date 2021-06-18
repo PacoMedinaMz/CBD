@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -23,7 +23,6 @@ import { CambioslnxComponent } from './cambioslnx/cambioslnx.component';
 import { ConsultaslnxComponent } from './consultaslnx/consultaslnx.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,13 +41,17 @@ import { HttpClientModule } from '@angular/common/http';
     ConsultaslnxComponent
   ],
   imports: [
+    ReactiveFormsModule,
+    MDBBootstrapModule.forRoot(),
+    
     BrowserModule,
     BrowserAnimationsModule,
-    MDBBootstrapModule.forRoot(),
+    
     FormsModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

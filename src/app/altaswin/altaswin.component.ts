@@ -12,33 +12,41 @@ const ip = "192.168.1.76"
 })
 export class AltaswinComponent implements OnInit {
 
-  asgForm = new FormGroup({
-    eno: new FormControl(''),
-    pno: new FormControl(''),
-    resp: new FormControl(''),
-    dur: new FormControl('')
-  });
+  asgForm: FormGroup;
 
-  empForm = new FormGroup({
-    eno: new FormControl(''),
-    ename: new FormControl(''),
-    title: new FormControl('')
-  });
+  empForm: FormGroup;
 
-  payForm = new FormGroup({
-    payno: new FormControl(''),
-    title: new FormControl(''),
-    sal: new FormControl('')
-  });
+  payForm: FormGroup;
 
-  projForm = new FormGroup({
-    pno: new FormControl(''),
-    pname: new FormControl(''),
-    budget: new FormControl('')
-  });
+  projForm: FormGroup;
 
   constructor(private http: HttpClient) { 
     console.log(`http://${ip}:3003/windows/${"altaAsg"}`); 
+
+    this.asgForm = new FormGroup({
+      eno: new FormControl(''),
+      pno: new FormControl(''),
+      resp: new FormControl(''),
+      dur: new FormControl('')
+    });
+  
+    this.empForm = new FormGroup({
+      eno: new FormControl(''),
+      ename: new FormControl(''),
+      title: new FormControl('')
+    });
+  
+    this.payForm = new FormGroup({
+      payno: new FormControl(''),
+      title: new FormControl(''),
+      sal: new FormControl('')
+    });
+  
+    this.projForm = new FormGroup({
+      pno: new FormControl(''),
+      pname: new FormControl(''),
+      budget: new FormControl('')
+    });
   }
 
   ngOnInit(): void {
@@ -65,6 +73,11 @@ export class AltaswinComponent implements OnInit {
   }
 
   clickEnviarAsg () {
+    if (true) {
+      console.log(this.asgForm);
+      
+      return false;
+    }
     var e = this.asgForm.value.eno;
     var p = this.asgForm.value.pno;
     var r = this.asgForm.value.resp;
@@ -115,6 +128,11 @@ export class AltaswinComponent implements OnInit {
   }
 
   clickEnviarEmp () {
+    if (true) {
+      console.log(this.empForm);
+      
+      return false;
+    }
     var e = this.empForm.value.emp;
     var en = this.empForm.value.ename;
     var t = this.empForm.value.title;;
@@ -159,6 +177,11 @@ export class AltaswinComponent implements OnInit {
   }
 
   clickEnviarPay () {
+    if (true) {
+      console.log(this.payForm);
+      
+      return false;
+    }
     var p = this.payForm.value.payno;
     var t = this.payForm.value.title;
     var s = this.payForm.value.sal;
@@ -204,6 +227,11 @@ export class AltaswinComponent implements OnInit {
   }
 
   clickEnviarProj () {
+    if (true) {
+      console.log(this.projForm);
+      
+      return false;
+    }
     var p = this.projForm.value.pno;
     var pn = this.projForm.value.pname;
     var b = this.projForm.value.budget;
