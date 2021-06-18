@@ -87,9 +87,9 @@ export class AltaslnxComponent implements OnInit {
   }
 
   clickEnviarEmp () {
-    var e = this.empForm.value.emp;
+    var e = this.empForm.value.eno;
     var ename = this.empForm.value.ename;
-    var title = this.empForm.value.title;;
+    var title = this.empForm.value.title;
 
     var eno = "E";
     eno += e.toString();

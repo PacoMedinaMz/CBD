@@ -102,28 +102,28 @@
             <div class="modal-body">
                 <div class="inicio">
                     <form class="text-center border border-light p-5 form modalstyle"
-                        formGroup="asgForm" id = "ags" name = "asg">
+                        [formGroup]="asgForm">
                         <p class="h4 mb-4">Introducir los siguientes datos:</p>
 
                         <!-- ENo-->
-                        <input type="text" id="asg_eno" class="form-control mb-4" placeholder="ENo."
-                            name="asg_eno">
+                        <input type="text" class="form-control mb-4" placeholder="ENo."
+                        formControlName="eno">
 
                         <!-- PNo -->
-                        <input type="text" id="asg_pno" class="form-control mb-4" placeholder="PNo."
-                            name="asg_pno">
+                        <input type="text" class="form-control mb-4" placeholder="PNo."
+                        formControlName="pno">
 
                         <!-- Resp -->
-                        <input type="text" id="asg_resp" class="form-control mb-4" placeholder="Resp."
-                            name="asg_resp">
+                        <input type="text" class="form-control mb-4" placeholder="Resp."
+                        formControlName="resp">
 
                         <!-- Dur -->
-                        <input type="number" id="asg_dur" class="form-control mb-4" placeholder="Dur."
-                            name="asg_dur">
+                        <input type="number" class="form-control mb-4" placeholder="Dur."
+                        formControlName="dur">
 
                         <!-- Boton de Agregar -->
                         <button type="button" class="btn btn-outline-secondary" data-mdb-ripple-color="dark"
-                            type="submit" (click)="success()">
+                            type="submit" (click)="clickEnviarAsg()">
                             Agregar
                         </button>
                     </form>
@@ -158,24 +158,24 @@
             <div class="modal-body">
                 <div class="inicio">
                     <form class="text-center border border-light p-5 form"
-                        formGroup = "empFrom" id = "emp" name = "emp">
+                        [formGroup]="empForm">
                         <p class="h4 mb-4">Introducir los siguientes datos:</p>
 
                         <!-- ENo-->
-                        <input type="text" id="emp_eno" class="form-control mb-4" placeholder="ENo."
-                            name="emp_eno">
+                        <input type="text" class="form-control mb-4" placeholder="ENo."
+                        formControlName="eno">
 
                         <!-- Ename -->
-                        <input type="text" id="emp_ename" class="form-control mb-4" placeholder="EName."
-                            name="emp_name">
+                        <input type="text" class="form-control mb-4" placeholder="EName."
+                        formControlName="ename">
 
                         <!-- Title -->
-                        <input type="text" id="emp_title" class="form-control mb-4" placeholder="Title."
-                            name="emp_title">
+                        <input type="text" class="form-control mb-4" placeholder="Title."
+                        formControlName="title">
 
                         <!-- Boton de Agregar -->
                         <button type="button" class="btn btn-outline-secondary" data-mdb-ripple-color="dark"
-                            type="submit" (click)="success()">
+                            type="submit" (click)="clickEnviarEmp()">
                             Agregar
                         </button>
                     </form>
@@ -211,24 +211,24 @@
             <div class="modal-body">
                 <div class="inicio">
                     <form class="text-center border border-light p-5 form" 
-                        formGroup = "payForm" id = "pay" name = "pay">
+                        [formGroup]="payForm">
                         <p class="h4 mb-4">Introducir los siguientes datos:</p>
 
                         <!-- PayNo-->
-                        <input type="number" id="pay_payno" class="form-control mb-4" placeholder="PayNo."
-                            name = "pay_payno"> 
+                        <input type="number" class="form-control mb-4" placeholder="PayNo."
+                        formControlName="payno"> 
 
                         <!-- Title -->
-                        <input type="text" id="pay_title" class="form-control mb-4" placeholder="Title."
-                            name="pay_title">
+                        <input type="text" class="form-control mb-4" placeholder="Title."
+                        formControlName="title">
 
                         <!-- Sal -->
-                        <input type="number" id="sal_title" class="form-control mb-4" placeholder="Sal."
-                            name="pay_sal">
+                        <input type="number" class="form-control mb-4" placeholder="Sal."
+                        formControlName="sal">
 
                         <!-- Boton de Agregar -->
                         <button type="button" class="btn btn-outline-secondary" data-mdb-ripple-color="dark"
-                            type="submit" (click)="success()">
+                            type="submit" (click)="clickEnviarPay()">
                             Agregar
                         </button>
                     </form>
@@ -263,24 +263,24 @@
             <div class="modal-body">
                 <div class="inicio">
                     <form class="text-center border border-light p-5 form"
-                        formGroup = "projForm" id = "proj" name = "proj">
+                        [formGroup]="projForm">
                         <p class="h4 mb-4">Introducir los siguientes datos:</p>
 
                         <!-- Proj -->
-                        <input type="text" id="proj_pno" class="form-control mb-4" placeholder="PNo."
-                            name="proj_pno">
+                        <input type="text" class="form-control mb-4" placeholder="PNo."
+                        formControlName="pno">
 
                         <!-- Pname -->
-                        <input type="text" id="proj_pname" class="form-control mb-4" placeholder="PName."
-                            name="proj_pname">
+                        <input type="text" class="form-control mb-4" placeholder="PName."
+                        formControlName="pname">
 
                         <!-- Budget -->
-                        <input type="number" id="proj_budget" class="form-control mb-4" placeholder="Budget."
-                            name="proj_budget">
+                        <input type="number" class="form-control mb-4" placeholder="Budget."
+                        formControlName="budget">
 
                         <!-- Boton de Agregar -->
                         <button type="button" class="btn btn-outline-secondary" data-mdb-ripple-color="dark"
-                            type="submit" (click)="success()">
+                            type="submit" (click)="clickEnviarProj()">
                             Agregar
                         </button>
                     </form>
