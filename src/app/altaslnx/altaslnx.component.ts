@@ -74,8 +74,8 @@ export class AltaslnxComponent implements OnInit {
     var resp = this.asgForm.value.resp;
     var dur = this.asgForm.value.dur;
 
-    var eno = `P${e}`;
-    var pno = `E${p}`;
+    var eno = `E${e}`;
+    var pno = `P${p}`;
 
     var asgJson =
     {

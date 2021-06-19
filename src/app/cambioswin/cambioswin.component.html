@@ -25,7 +25,6 @@
             <!-- De aqui se puede usar el ngfor* para obtener todos los datos de la BD -->
             <table class="table table-striped">
               <thead>
-                <th>ID</th>
                 <th>ENO</th>
                 <th>PNO</th>
                 <th>RESP</th>
@@ -65,7 +64,6 @@
             <!-- De aqui se puede usar el ngfor* para obtener todos los datos de la BD -->
             <table class="table table-striped">
               <thead>
-                <th>ID</th>
                 <th>ENO</th>
                 <th>ENAME</th>
                 <th>TITLE</th>
@@ -103,7 +101,7 @@
             <!-- De aqui se puede usar el ngfor* para obtener todos los datos de la BD -->
             <table class="table table-striped">
               <thead>
-                <th>ID</th>
+                <th>PAYNO</th>
                 <th>TITLE</th>
                 <th>SAL</th>
                 <th>*</th>
@@ -139,7 +137,6 @@
             <!-- De aqui se puede usar el ngfor* para obtener todos los datos de la BD -->
             <table class="table table-striped">
               <thead>
-                <th>ID</th>
                 <th>PNO</th>
                 <th>PNAME</th>
                 <th>BUDGET</th>
@@ -397,6 +394,14 @@
             [formGroup]="formPay"
           >
             <p class="h4 mb-4">Introducir los siguientes datos:</p>
+
+            <!-- PAYNO-->
+            <input
+              type="text"
+              formControlName="payno"
+              class="form-control mb-4"
+              placeholder="PayNo."
+            />
 
             <!-- Title -->
             <input

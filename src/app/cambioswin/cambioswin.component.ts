@@ -22,6 +22,7 @@ export class CambioswinComponent implements OnInit {
     title: new FormControl(""),
   });
   formPay = new FormGroup({
+    payno: new FormControl(""),
     title: new FormControl(""),
     sal: new FormControl(""),
   });
@@ -107,13 +108,16 @@ export class CambioswinComponent implements OnInit {
   }
 
   clickEnviarPay() {
+    var p = this.formPay.value.payno;
     var t = this.formPay.value.title;
     var s = this.formPay.value.sal;
 
+    var payno = "Py" + p;
     var title = t.toString();
     var sal = s.toString();
 
     var json = {
+      payno: payno,
       title: title,
       sal: sal,
     };
