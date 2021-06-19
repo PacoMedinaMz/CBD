@@ -109,10 +109,13 @@ export class AltaswinComponent implements OnInit {
   }
 
   clickEnviarEmp () {
-    var e = this.empForm.value.emp;
+    var e1 = this.empForm.value.eno;
     var ename = this.empForm.value.ename;
     var title = this.empForm.value.title;;
-    var eno = `E${e}`;
+    console.log(e1);
+
+    var eno = `E${e1}`;
+    console.log(eno);
 
     var empJson =
     {
