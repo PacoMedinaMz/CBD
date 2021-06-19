@@ -11,7 +11,9 @@ import Swal from "sweetalert2";
 export class BajaslnxComponent implements OnInit {
   formAsg = new FormGroup({
     id: new FormControl(""),
+    id2: new FormControl(""),
   });
+
   formEmp = new FormGroup({
     id: new FormControl(""),
   });
@@ -66,12 +68,37 @@ export class BajaslnxComponent implements OnInit {
   clickEnviarAsg(thas) {
     //Usa thas en vez de this
     var id = thas.formAsg.value.id;
+    var id2 = thas.formAsg.value.id2;
 
+    var idJson =
+    {
+      "id": id,
+      "id2": id2
+    };
+/*
     thas.enviarPeticion(
-      id,
-      "http://192.168.1.76:3003/linux/bajaAsg",
-      "http://192.168.1.76:3003/linux/bajaAsgR"
-    );
+      JSON.stringify(idJson),
+      "http://192.168.1.76:3003/windows/bajaAsg",
+      "http://192.168.1.76:3003/windows/bajaAsgR"
+    );*/
+
+    fetch('http://192.168.1.76:3003/linux/bajaAsg', {
+      method: 'POST',
+      headers: {
+        'Content-Type': "application/json"
+      }, body: JSON.stringify(idJson)
+    }).then(() => {
+      console.log("Datos enviados...")
+    })
+
+    fetch('http://192.168.1.76:3003/linux/bajaAsgR', {
+      method: 'POST',
+      headers: {
+        'Content-Type': "application/json"
+      }, body: JSON.stringify(idJson)
+    }).then(() => {
+      console.log("Datos enviados...")
+    })
   }
 
   clickEnviarEmp(thas) {
