@@ -1,26 +1,26 @@
 {
   "windows": {
-    "host": "localhost123",
-    "user": "user",
-    "password": "passwd",
-    "database": "db"
+    "host": "192.168.1.78",
+    "user": "wndarchitect",
+    "password": "Windows2021+",
+    "database": "servewin"
   },
   "rwindows": {
-    "host": "localhost123",
-    "user": "user",
-    "password": "passwd",
-    "database": "db"
+    "host": "192.168.1.74",
+    "user": "lnxarchitect",
+    "password": "Linux2021*",
+    "database": "replicaWin"
   },
   "linux": {
-    "host": "localhost123",
-    "user": "user",
-    "password": "passwd",
-    "database": "db"
+    "host": "192.168.1.74",
+    "user": "lnxarchitect",
+    "password": "Linux2021*",
+    "database": "serveLnx"
   },
   "rlinux": {
-    "host": "localhost123",
-    "user": "user",
-    "password": "passwd",
-    "database": "db"
+    "host": "192.168.1.78",
+    "user": "wndarchitect",
+    "password": "Windows2021+",
+    "database": "replicalnx"
   }
 }

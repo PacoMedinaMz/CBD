@@ -107,4 +107,261 @@ router.put("/", (req, res) => {
     });
 });
 
+router.post('/altaAsg', function (req, res) {
+  console.log(req.body);
+  conn.query(
+      'insert into asg (eno, pno, resp, dur) VALUES (?,?,?,?)',
+      //["pepe", "pepe", "pepe", 1000],
+      [req.body.eno, req.body.pno, req.body.resp, parseInt(req.body.dur)],
+      (error) => {
+          if (error) {
+              console.error(error);
+              res.status(500).json({ status: 'error' });
+          } else {
+              res.status(200).json({ status: 'registrado' });
+          }
+      }
+  );
+});
+
+router.post('/altaAsgR', function (req, res) {
+  console.log(req.body);
+  conn2.query(
+      'insert into asg (eno, pno, resp, dur) VALUES (?,?,?,?)',
+      [req.body.eno, req.body.pno, req.body.resp, parseInt(req.body.dur)],
+      (error) => {
+          if (error) {
+              console.error(error);
+              res.status(500).json({ status: 'error' });
+          } else {
+              res.status(200).json({ status: 'registrado' });
+          }
+      }
+  );
+});
+
+router.post('/altaEmp', function (req, res) {
+  console.log(req.body);
+  conn.query(
+      'insert into emp (eno, ename, title) VALUES (?,?,?)',
+      [req.body.eno, req.body.ename, req.body.title],
+      (error) => {
+          if (error) {
+              console.error(error);
+              res.status(500).json({ status: 'error' });
+          } else {
+              res.status(200).json({ status: 'registrado' });
+          }
+      }
+  );
+});
+
+router.post('/altaEmpR', function (req, res) {
+  console.log(req.body);
+  conn2.query(
+    'insert into emp (eno, ename, title) VALUES (?,?,?)',
+    [req.body.eno, req.body.ename, req.body.title],
+    (error) => {
+        if (error) {
+          console.error(error);
+          res.status(500).json({ status: 'error' });
+        } else {
+            res.status(200).json({ status: 'registrado' });
+        }
+      }
+  );
+});
+
+router.post('/altaPay', function (req, res) {
+  console.log(req.body);
+  conn.query(
+      'insert into pay (payno, title, salary) VALUES (?,?,?)',
+      [req.body.payno, req.body.title, parseInt(req.body.sal)],
+      (error) => {
+          if (error) {
+              console.error(error);
+              res.status(500).json({ status: 'error' });
+          } else {
+              res.status(200).json({ status: 'registrado' });
+          }
+      }
+  );
+});
+
+router.post('/altaPayR', function (req, res) {
+  console.log(req.body);
+  conn2.query(
+    'insert into pay (payno, title, salary) VALUES (?,?,?)',
+      [req.body.payno, req.body.title, parseInt(req.body.sal)],
+      (error) => {
+          if (error) {
+              console.error(error);
+              res.status(500).json({ status: 'error' });
+          } else {
+              res.status(200).json({ status: 'registrado' });
+          }
+      }
+  );
+});
+
+router.post('/altaProj', function (req, res) {
+  console.log(req.body);
+  conn.query(
+      'insert into proj (pno, pname, budget) VALUES (?,?,?)',
+      [req.body.pno, req.body.pname, parseInt(req.body.budget)],
+      (error) => {
+          if (error) {
+              console.error(error);
+              res.status(500).json({ status: 'error' });
+          } else {
+              res.status(200).json({ status: 'registrado' });
+          }
+      }
+  );
+});
+
+router.post('/altaProjR', function (req, res) {
+  console.log(req.body);
+  conn2.query(
+    'insert into proj (pno, pname, budget) VALUES (?,?,?)',
+      [req.body.pno, req.body.pname, parseInt(req.body.budget)],
+      (error) => {
+          if (error) {
+              console.error(error);
+              res.status(500).json({ status: 'error' });
+          } else {
+              res.status(200).json({ status: 'registrado' });
+          }
+      }
+  );
+});
+
+router.post('/cambioAsg', function (req, res) {
+  console.log(req.body);
+  var t = 'update asg set  resp = ?, dur = ?  where eno = ? and pno = ?';
+  conn.query(t,
+      [req.body.resp,parseInt(req.body.dur), req.body.eno, req.body.pno],
+      (error) => {
+          if (error) {
+              console.error(error);
+              res.status(500).json({ status: 'error' });
+          } else {
+              res.status(200).json({ status: 'registrado' });
+          }
+      }
+  );
+});
+
+router.post('/cambioAsgR', function (req, res) {
+  console.log(req.body);
+  var t = 'update asg set  resp = ?, dur = ?  where eno = ? and pno = ?';
+  conn2.query(t,
+      [req.body.resp,parseInt(req.body.dur), req.body.eno, req.body.pno],
+      (error) => {
+          if (error) {
+              console.error(error);
+              res.status(500).json({ status: 'error' });
+          } else {
+              res.status(200).json({ status: 'registrado' });
+          }
+      }
+  );
+});
+
+router.post('/cambioEmp', function (req, res) {
+  console.log(req.body);
+  var t = 'update emp set  ename = ?, title = ?  where eno = ?';
+  conn.query(t,
+      [req.body.ename, req.body.title, req.body.eno],
+      (error) => {
+          if (error) {
+              console.error(error);
+              res.status(500).json({ status: 'error' });
+          } else {
+              res.status(200).json({ status: 'registrado' });
+          }
+      }
+  );
+});
+
+router.post('/cambioEmpR', function (req, res) {
+  console.log(req.body);
+  var t = 'update emp set  ename = ?, title = ?  where eno = ?';
+  conn2.query(t,
+    [req.body.ename, req.body.title, req.body.eno],
+      (error) => {
+          if (error) {
+              console.error(error);
+              res.status(500).json({ status: 'error' });
+          } else {
+              res.status(200).json({ status: 'registrado' });
+          }
+      }
+  );
+});
+
+router.post('/cambioPay', function (req, res) {
+  console.log(req.body);
+  var t = 'update pay set  title = ?, salary = ?  where payno = ?';
+  conn.query(t,
+      [req.body.title, parseInt(req.body.sal), req.body.payno],
+      (error) => {
+          if (error) {
+              console.error(error);
+              res.status(500).json({ status: 'error' });
+          } else {
+              res.status(200).json({ status: 'registrado' });
+          }
+      }
+  );
+});
+
+router.post('/cambioPayR', function (req, res) {
+  console.log(req.body);
+  var t = 'update pay set  title = ?, salary = ?  where payno = ?';
+  conn2.query(t,
+    [req.body.title, parseInt(req.body.sal), req.body.payno],
+      (error) => {
+          if (error) {
+              console.error(error);
+              res.status(500).json({ status: 'error' });
+          } else {
+              res.status(200).json({ status: 'registrado' });
+          }
+      }
+  );
+});
+
+router.post('/cambioProj', function (req, res) {
+  console.log(req.body);
+  var t = 'update proj set  pname = ?, budget = ?  where pno = ?';
+  conn.query(t,
+      [req.body.pname, parseInt(req.body.budget),  req.body.pno],
+      (error) => {
+          if (error) {
+              console.error(error);
+              res.status(500).json({ status: 'error' });
+          } else {
+              res.status(200).json({ status: 'registrado' });
+          }
+      }
+  );
+});
+
+router.post('/cambioProjR', function (req, res) {
+  console.log(req.body);
+  var t = 'update proj set  pname = ?, budget = ?  where pno = ?';
+  conn2.query(t,
+    [req.body.pname, parseInt(req.body.budget),  req.body.pno],
+      (error) => {
+          if (error) {
+              console.error(error);
+              res.status(500).json({ status: 'error' });
+          } else {
+              res.status(200).json({ status: 'registrado' });
+          }
+      }
+  );
+});
+
 module.exports = router;
