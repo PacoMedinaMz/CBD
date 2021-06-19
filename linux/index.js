@@ -363,4 +363,132 @@ router.post('/cambioProjR', function (req, res) {
   );
 });
 
+router.post('/bajaAsg', function (req, res) {
+  console.log(req.body);
+  var t = 'delete from asg WHERE eno = ? and pno = ? ';
+  conn.query(t,
+    [req.body.id, req.body.id2],
+      (error) => {
+          if (error) {
+              console.error(error);
+              res.status(500).json({ status: 'error' });
+          } else {
+              res.status(200).json({ status: 'registrado' });
+          }
+      }
+  );
+});
+
+router.post('/bajaAsgR', function (req, res) {
+  console.log(req.body);
+  var t = 'delete from asg WHERE (eno = ? and pno = ?)';
+  conn2.query(t,
+    [req.body.id, req.body.id2],
+      (error) => {
+          if (error) {
+              console.error(error);
+              res.status(500).json({ status: 'error' });
+          } else {
+              res.status(200).json({ status: 'registrado' });
+          }
+      }
+  );
+});
+
+router.post('/bajaEmp', function (req, res) {
+  console.log(req.body);
+  var t = 'delete from emp WHERE eno = ? ';
+  conn.query(t,
+    [req.body.id],
+      (error) => {
+          if (error) {
+              console.error(error);
+              res.status(500).json({ status: 'error' });
+          } else {
+              res.status(200).json({ status: 'registrado' });
+          }
+      }
+  );
+});
+
+router.post('/bajaEmpR', function (req, res) {
+  console.log(req.body);
+  var t = 'delete from emp WHERE eno = ? ';
+  conn2.query(t,
+    [req.body.id],
+      (error) => {
+          if (error) {
+              console.error(error);
+              res.status(500).json({ status: 'error' });
+          } else {
+              res.status(200).json({ status: 'registrado' });
+          }
+      }
+  );
+});
+
+router.post('/bajaPay', function (req, res) {
+  console.log(req.body);
+  var t = 'delete from pay WHERE payno = ? ';
+  conn.query(t,
+    [req.body.id],
+      (error) => {
+          if (error) {
+              console.error(error);
+              res.status(500).json({ status: 'error' });
+          } else {
+              res.status(200).json({ status: 'registrado' });
+          }
+      }
+  );
+});
+
+router.post('/bajaPayR', function (req, res) {
+  console.log(req.body);
+  var t = 'delete from pay WHERE payno = ? ';
+  conn2.query(t,
+    [req.body.id],
+      (error) => {
+          if (error) {
+              console.error(error);
+              res.status(500).json({ status: 'error' });
+          } else {
+              res.status(200).json({ status: 'registrado' });
+          }
+      }
+  );
+});
+
+router.post('/bajaProj', function (req, res) {
+  console.log(req.body);
+  var t = 'delete from proj WHERE pno = ? ';
+  conn.query(t,
+    [req.body.id],
+      (error) => {
+          if (error) {
+              console.error(error);
+              res.status(500).json({ status: 'error' });
+          } else {
+              res.status(200).json({ status: 'registrado' });
+          }
+      }
+  );
+});
+
+router.post('/bajaProjR', function (req, res) {
+  console.log(req.body);
+  var t = 'delete from proj WHERE pno = ? ';
+  conn2.query(t,
+    [req.body.id],
+      (error) => {
+          if (error) {
+              console.error(error);
+              res.status(500).json({ status: 'error' });
+          } else {
+              res.status(200).json({ status: 'registrado' });
+          }
+      }
+  );
+});
+
 module.exports = router;
