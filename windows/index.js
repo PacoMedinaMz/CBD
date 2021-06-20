@@ -567,99 +567,9 @@ router.post('/conEmp', function (req, res) {
   );
 });
 
-router.post('/conEmp1', function (req, res) {
-  console.log(req.body);
-  var t = 'select * from emp1';
-  conn.query(t, function (error, result, fields) {
-          if (error) {
-              console.error(error);
-              res.status(500).json({ status: 'error' });
-          } else {
-              res.status(200).json(result);
-              console.log(result);
-          }
-      }
-  );
-});
-
-router.post('/conEmp2', function (req, res) {
-  console.log(req.body);
-  var t = 'select * from emp2';
-  conn.query(t, function (error, result, fields) {
-          if (error) {
-              console.error(error);
-              res.status(500).json({ status: 'error' });
-          } else {
-              res.status(200).json(result);
-              console.log(result);
-          }
-      }
-  );
-});
-
-router.post('/conEmp3', function (req, res) {
-  console.log(req.body);
-  var t = 'select * from emp3';
-  conn.query(t, function (error, result, fields) {
-          if (error) {
-              console.error(error);
-              res.status(500).json({ status: 'error' });
-          } else {
-              res.status(200).json(result);
-              console.log(result);
-          }
-      }
-  );
-});
-
 router.post('/conPay', function (req, res) {
   console.log(req.body);
   var t = 'select * from pay';
-  conn.query(t, function (error, result, fields) {
-          if (error) {
-              console.error(error);
-              res.status(500).json({ status: 'error' });
-          } else {
-              res.status(200).json(result);
-              console.log(result);
-          }
-      }
-  );
-});
-
-router.post('/conPay1', function (req, res) {
-  console.log(req.body);
-  var t = 'select * from pay1';
-  conn.query(t, function (error, result, fields) {
-          if (error) {
-              console.error(error);
-              res.status(500).json({ status: 'error' });
-          } else {
-              res.status(200).json(result);
-              console.log(result);
-          }
-      }
-  );
-});
-
-router.post('/conPay2', function (req, res) {
-  console.log(req.body);
-  var t = 'select * from pay2';
-  conn.query(t, function (error, result, fields) {
-          if (error) {
-              console.error(error);
-              res.status(500).json({ status: 'error' });
-          } else {
-              res.status(200).json(result);
-              console.log(result);
-          }
-      }
-  );
-});
-
-router.post('/conPay3', function (req, res) {
-  console.log(req.body);
-  var t = 'select * from pay3';
   conn.query(t, function (error, result, fields) {
           if (error) {
               console.error(error);

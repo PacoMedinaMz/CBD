@@ -507,51 +507,6 @@ router.post('/conAsg', function (req, res) {
   );
 }); 
 
-router.post('/conAsg1', function (req, res) {
-  console.log(req.body);
-  var t = 'select * from asg1';
-  conn.query(t, function (error, result, fields) {
-          if (error) {
-              console.error(error);
-              res.status(500).json({ status: 'error' });
-          } else {
-              res.status(200).json(result);
-              console.log(result);
-          }
-      }
-  );
-});
-
-router.post('/conAsg2', function (req, res) {
-  console.log(req.body);
-  var t = 'select * from asg2';
-  conn.query(t, function (error, result, fields) {
-          if (error) {
-              console.error(error);
-              res.status(500).json({ status: 'error' });
-          } else {
-              res.status(200).json(result);
-              console.log(result);
-          }
-      }
-  );
-});
-
-router.post('/conAsg3', function (req, res) {
-  console.log(req.body);
-  var t = 'select * from asg3';
-  conn.query(t, function (error, result, fields) {
-          if (error) {
-              console.error(error);
-              res.status(500).json({ status: 'error' });
-          } else {
-              res.status(200).json(result);
-              console.log(result);
-          }
-      }
-  );
-});
-
 router.post('/conEmp', function (req, res) {
   console.log(req.body);
   var t = 'select * from emp';
@@ -675,51 +630,6 @@ router.post('/conPay3', function (req, res) {
 router.post('/conProj', function (req, res) {
   console.log(req.body);
   var t = 'select * from proj';
-  conn.query(t, function (error, result, fields) {
-          if (error) {
-              console.error(error);
-              res.status(500).json({ status: 'error' });
-          } else {
-              res.status(200).json(result);
-              console.log(result);
-          }
-      }
-  );
-});
-
-router.post('/conProj1', function (req, res) {
-  console.log(req.body);
-  var t = 'select * from proj1';
-  conn.query(t, function (error, result, fields) {
-          if (error) {
-              console.error(error);
-              res.status(500).json({ status: 'error' });
-          } else {
-              res.status(200).json(result);
-              console.log(result);
-          }
-      }
-  );
-});
-
-router.post('/conProj2', function (req, res) {
-  console.log(req.body);
-  var t = 'select * from proj2';
-  conn.query(t, function (error, result, fields) {
-          if (error) {
-              console.error(error);
-              res.status(500).json({ status: 'error' });
-          } else {
-              res.status(200).json(result);
-              console.log(result);
-          }
-      }
-  );
-});
-
-router.post('/conProj3', function (req, res) {
-  console.log(req.body);
-  var t = 'select * from proj3';
   conn.query(t, function (error, result, fields) {
           if (error) {
               console.error(error);
