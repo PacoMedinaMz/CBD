@@ -4,363 +4,427 @@
             <p><b>Base de Datos: Linux > CONSULTAS</b></p>
         </h3>
     </div>
+    <!--1-->
     <div class="espaciodos">
-        <h4>
-            <p><b>Selecciona la tabla:</b></p>
-        </h4>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <h4><b>Asg </b></h4>
+          </tr>
+          <tr>
+            <th scope="col">Eno</th>
+            <th scope="col">Pno</th>
+            <th scope="col">Resp</th>
+            <th scope="col">Dur</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let country of countries; index as i">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>
+              <img [src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag" class="mr-2" style="width: 20px">
+              {{ country.name }}
+            </td>
+            <td>{{ country.area | number }}</td>
+            <td>{{ country.population | number }}</td>
+          </tr>
+      </tbody>
+    </table>
     </div>
-    <div class="inicio">
-        <div class="card text-center tablas">
-            <div class="card-header headertabla" style="color: #fff;"><b>Opciones Disponibles:</b></div>
 
-            <!-- TABLA ASG -->
-            <ngb-accordion #acc="ngbAccordion" activeIds="config-panel-one">
-                <ngb-panel>
-                    <ng-template ngbPanelTitle>
-                        <span><b> Mostrar Todos los Datos </b></span>
-                    </ng-template>
-                    <ng-template ngbPanelContent>
-                        <h4>Tablas Encontradas:</h4>
-                        <!-- De aqui se puede usar el ngfor* para obtener todos los datos de la BD -->
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Nombre</th>
-                                    <th scope="col">Selección</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>ASG</td>
-                                    <td>
-                                        <button type="button" class="btn btn-outline-secondary"
-                                            data-mdb-ripple-color="dark" (click)="asg.show()">
-                                            Seleccionar
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>EMP</td>
-                                    <td>
-                                        <button type="button" class="btn btn-outline-secondary"
-                                            data-mdb-ripple-color="dark" (click)="emp.show()">
-                                            Seleccionar
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>PAY</td>
-                                    <td>
-                                        <button type="button" class="btn btn-outline-secondary"
-                                            data-mdb-ripple-color="dark" (click)="pay.show()">
-                                            Seleccionar
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td>PROJ</td>
-                                    <td>
-                                        <button type="button" class="btn btn-outline-secondary"
-                                            data-mdb-ripple-color="dark" (click)="proj.show()">
-                                            Seleccionar
-                                        </button>
-                                    </td>
-
-                                </tr>
-                            </tbody>
-                        </table>
-
-                    </ng-template>
-                </ngb-panel>
-
-                <!-- TABLA EMP -->
-                <ngb-panel>
-                    <ng-template ngbPanelTitle>
-                        <span><b> Fragmentación 1 </b></span>
-                    </ng-template>
-                    <ng-template ngbPanelContent>
-
-                        <!-- De aqui se puede usar el ngfor* para obtener todos los datos de la BD -->
-                        <table class="table table-striped">
-                            <thead>
-                                <th>*</th>
-                                <th>*</th>
-                                <th>*</th>
-                                <th>*</th>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <!-- Aqui va lo recuperado de la base de datos -->
-                                    <td>Info</td>
-                                    <td>Info</td>
-                                    <td>Info</td>
-                                    <td>Info</td>
-                                </tr>
-                            </tbody>
-
-                        </table>
-
-                    </ng-template>
-                </ngb-panel>
-
-
-                <!-- TABLA PAY -->
-                <ngb-panel>
-                    <ng-template ngbPanelTitle>
-                        <span><b> Fragmentación 2 </b></span>
-                    </ng-template>
-                    <ng-template ngbPanelContent>
-                        <!-- De aqui se puede usar el ngfor* para obtener todos los datos de la BD -->
-                        <!-- De aqui se puede usar el ngfor* para obtener todos los datos de la BD -->
-                        <table class="table table-striped">
-                            <thead>
-                                <th>*</th>
-                                <th>*</th>
-                                <th>*</th>
-                                <th>*</th>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <!-- Aqui va lo recuperado de la base de datos -->
-                                    <td>Info</td>
-                                    <td>Info</td>
-                                    <td>Info</td>
-                                    <td>Info</td>
-                                </tr>
-                            </tbody>
-
-                        </table>
-
-                    </ng-template>
-                </ngb-panel>
-
-                <!-- TABLA PROJ -->
-                <ngb-panel>
-                    <ng-template ngbPanelTitle>
-                        <span><b> Fragmentación 3 </b></span>
-                    </ng-template>
-                    <ng-template ngbPanelContent>
-                        <!-- De aqui se puede usar el ngfor* para obtener todos los datos de la BD -->
-                        <table class="table table-striped">
-                            <thead>
-                                <th>*</th>
-                                <th>*</th>
-                                <th>*</th>
-                                <th>*</th>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <!-- Aqui va lo recuperado de la base de datos -->
-                                    <td>Info</td>
-                                    <td>Info</td>
-                                    <td>Info</td>
-                                    <td>Info</td>
-                                </tr>
-                            </tbody>
-
-                        </table>
-
-                    </ng-template>
-                </ngb-panel>
-            </ngb-accordion>
-        </div>
-
+    <!--2-->
+    <div class="espaciodos">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <h4><b>Asg 1</b></h4>
+          </tr>
+          <tr>
+            <th scope="col">Eno</th>
+            <th scope="col">Pno</th>
+            <th scope="col">Resp</th>
+            <th scope="col">Dur</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let country of countries; index as i">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>
+              <img [src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag" class="mr-2" style="width: 20px">
+              {{ country.name }}
+            </td>
+            <td>{{ country.area | number }}</td>
+            <td>{{ country.population | number }}</td>
+          </tr>
+      </tbody>
+    </table>
     </div>
-    <div class="cdback regreso">
-        <a class="btn btn-secondary cdbtnback" style="background-color: #980da5;" routerLink="/ldb" role="button">
-            <div class="btntxtback">
-                <p><i class="fas fa-arrow-left btniconback"></i>Regresar</p>
-            </div>
-        </a>
+
+    <!--3-->
+    <div class="espaciodos">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <h4><b>Asg 2 </b></h4>
+          </tr>
+          <tr>
+            <th scope="col">Eno</th>
+            <th scope="col">Pno</th>
+            <th scope="col">Resp</th>
+            <th scope="col">Dur</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let country of countries; index as i">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>
+              <img [src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag" class="mr-2" style="width: 20px">
+              {{ country.name }}
+            </td>
+            <td>{{ country.area | number }}</td>
+            <td>{{ country.population | number }}</td>
+          </tr>
+      </tbody>
+    </table>
     </div>
-    <br><br><br><br>
+
+    <!--4-->
+    <div class="espaciodos">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <h4><b>Asg 3</b></h4>
+          </tr>
+          <tr>
+            <th scope="col">Eno</th>
+            <th scope="col">Pno</th>
+            <th scope="col">Resp</th>
+            <th scope="col">Dur</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let country of countries; index as i">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>
+              <img [src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag" class="mr-2" style="width: 20px">
+              {{ country.name }}
+            </td>
+            <td>{{ country.area | number }}</td>
+            <td>{{ country.population | number }}</td>
+          </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!--5-->
+    <div class="espaciodos">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <h4><b>Eno </b></h4>
+          </tr>
+          <tr>
+            <th scope="col">Eno</th>
+            <th scope="col">Ename</th>
+            <th scope="col">Title</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let country of countries; index as i">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>
+              <img [src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag" class="mr-2" style="width: 20px">
+              {{ country.name }}
+            </td>
+            <td>{{ country.area | number }}</td>
+          </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!--6-->
+    <div class="espaciodos">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <h4><b>Eno 1 </b></h4>
+          </tr>
+          <tr>
+            <th scope="col">Eno</th>
+            <th scope="col">Ename</th>
+            <th scope="col">Title</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let country of countries; index as i">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>
+              <img [src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag" class="mr-2" style="width: 20px">
+              {{ country.name }}
+            </td>
+            <td>{{ country.area | number }}</td>
+          </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!--7-->
+    <div class="espaciodos">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <h4><b>Eno 2 </b></h4>
+          </tr>
+          <tr>
+            <th scope="col">Eno</th>
+            <th scope="col">Ename</th>
+            <th scope="col">Title</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let country of countries; index as i">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>
+              <img [src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag" class="mr-2" style="width: 20px">
+              {{ country.name }}
+            </td>
+            <td>{{ country.area | number }}</td>
+          </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!--8-->
+    <div class="espaciodos">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <h4><b>Eno 3 </b></h4>
+          </tr>
+          <tr>
+            <th scope="col">Eno</th>
+            <th scope="col">Ename</th>
+            <th scope="col">Title</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let country of countries; index as i">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>
+              <img [src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag" class="mr-2" style="width: 20px">
+              {{ country.name }}
+            </td>
+            <td>{{ country.population | number }}</td>
+          </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!--9-->
+    <div class="espaciodos">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <h4><b>Pay</b></h4>
+          </tr>
+          <tr>
+            <th scope="col">Pyno</th>
+            <th scope="col">Title</th>
+            <th scope="col">Sal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let country of countries; index as i">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>
+              <img [src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag" class="mr-2" style="width: 20px">
+              {{ country.name }}
+            </td>
+            <td>{{ country.area | number }}</td>
+          </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!--10-->
+    <div class="espaciodos">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <h4><b>Pay 1</b></h4>
+          </tr>
+          <tr>
+            <th scope="col">Pyno</th>
+            <th scope="col">Title</th>
+            <th scope="col">Sal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let country of countries; index as i">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>
+              <img [src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag" class="mr-2" style="width: 20px">
+              {{ country.name }}
+            </td>
+            <td>{{ country.area | number }}</td>
+          </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!--11-->
+    <div class="espaciodos">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <h4><b>Pay 2 </b></h4>
+          </tr>
+          <tr>
+            <th scope="col">Pyno</th>
+            <th scope="col">Title</th>
+            <th scope="col">Sal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let country of countries; index as i">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>
+              <img [src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag" class="mr-2" style="width: 20px">
+              {{ country.name }}
+            </td>
+            <td>{{ country.population | number }}</td>
+          </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!--12-->
+    <div class="espaciodos">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <h4><b>Pay 3 </b></h4>
+          </tr>
+          <tr>
+            <th scope="col">Pyno</th>
+            <th scope="col">Title</th>
+            <th scope="col">Sal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let country of countries; index as i">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>
+              <img [src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag" class="mr-2" style="width: 20px">
+              {{ country.name }}
+            </td>
+            <td>{{ country.population | number }}</td>
+          </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!--13-->
+    <div class="espaciodos">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <h4><b>Proj </b></h4>
+          </tr>
+          <tr>
+            <th scope="col">Pno</th>
+            <th scope="col">Pname</th>
+            <th scope="col">Budget</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let country of countries; index as i">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>
+              <img [src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag" class="mr-2" style="width: 20px">
+              {{ country.name }}
+            </td>
+            <td>{{ country.population | number }}</td>
+          </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!--14-->
+    <div class="espaciodos">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <h4><b>Proj 1 </b></h4>
+          </tr>
+          <tr>
+            <th scope="col">Pno</th>
+            <th scope="col">Pname</th>
+            <th scope="col">Budget</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let country of countries; index as i">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>
+              <img [src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag" class="mr-2" style="width: 20px">
+              {{ country.name }}
+            </td>
+            <td>{{ country.population | number }}</td>
+          </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!--15-->
+    <div class="espaciodos">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <h4><b>Proj 2</b></h4>
+          </tr>
+          <tr>
+            <th scope="col">Pno</th>
+            <th scope="col">Pname</th>
+            <th scope="col">Budget</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let country of countries; index as i">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>
+              <img [src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag" class="mr-2" style="width: 20px">
+              {{ country.name }}
+            </td>
+            <td>{{ country.population | number }}</td>
+          </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!--16-->
+    <div class="espaciodos">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <h4><b>Proj 3 </b></h4>
+          </tr>
+          <tr>
+            <th scope="col">Pno</th>
+            <th scope="col">Pname</th>
+            <th scope="col">Budget</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let country of countries; index as i">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>
+              <img [src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag" class="mr-2" style="width: 20px">
+              {{ country.name }}
+            </td>
+            <td>{{ country.area | number }}</td>
+          </tr>
+      </tbody>
+    </table>
+    </div>
 </div>
-
-
-<!---------------------MODAL DE TABLA ASG ------------------------------------------------------------------------------>
-<div mdbModal #asg="mdbModal" class="modal fade top" id="asgModalTop" tabindex="-1" role="dialog"
-    aria-labelledby="myModalLabel" aria-hidden="true" style="overflow-y: auto">
-    <div class="modal-dialog modal-notify modal-info" role="document">
-        <div class="modal-content">
-            <div class="modal-header text-center"  style="background-color: #a446f1;">
-                <!-- TITULO -->
-                <h4 class="modal-title white-text w-100 font-weight-bold py-2">
-                    Consulta - ASG
-                </h4>
-            </div>
-
-            <!--Body-->
-            <div class="modal-body">
-                <div class="inicio">
-                    <!-- De aqui se puede usar el ngfor* para obtener todos los datos de la BD -->
-                    <table class="table table-striped">
-                        <thead>
-                            <th>ID</th>
-                            <th>ENO</th>
-                            <th>PNO</th>
-                            <th>RESP</th>
-                            <th>DUR</th>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <!-- Aqui va lo recuperado de la base de datos -->
-                                <td>Info</td>
-                                <td>Info</td>
-                                <td>Info</td>
-                                <td>Info</td>
-                                <td>Info</td>
-                            </tr>
-                        </tbody>
-
-                    </table>
-                </div>
-            </div>
-            <!--/.Body-->
-        </div>
-
-    </div>
-
-</div>
-<!------------------------------------ FIN DE MODAL DE TABLA ASG ------------------------------------------------------------------------------>
-
-
-<!-------------------------------------- MODAL DE TABLA EMP ------------------------------------------------------------------------------>
-<div mdbModal #emp="mdbModal" class="modal fade top" id="empModalTop" tabindex="-1" role="dialog"
-    aria-labelledby="myModalLabel" aria-hidden="true" style="overflow-y: auto">
-    <div class="modal-dialog modal-notify modal-info" role="document">
-        <div class="modal-content">
-            <div class="modal-header text-center"  style="background-color: #a446f1;">
-                <!-- TITULO -->
-                <h4 class="modal-title white-text w-100 font-weight-bold py-2">
-                    Consulta - EMP
-                </h4>
-
-            </div>
-
-            <!--Body-->
-            <div class="modal-body">
-                <div class="inicio">
-                    <!-- De aqui se puede usar el ngfor* para obtener todos los datos de la BD -->
-                    <table class="table table-striped">
-                        <thead>
-                            <th>ID</th>
-                            <th>ENO</th>
-                            <th>ENAME</th>
-                            <th>TITLE</th>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <!-- Aqui va lo recuperado de la base de datos -->
-                                <td>Info</td>
-                                <td>Info</td>
-                                <td>Info</td>
-                                <td>Info</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <!--/.Body-->
-        </div>
-
-    </div>
-
-</div>
-<!------------------------------------ FIN DE MODAL DE TABLA EMP ------------------------------------------------------------------------------>
-
-
-
-<!-------------------------------------- MODAL DE TABLA PAY ------------------------------------------------------------------------------>
-<div mdbModal #pay="mdbModal" class="modal fade top" id="payModalTop" tabindex="-1" role="dialog"
-    aria-labelledby="myModalLabel" aria-hidden="true" style="overflow-y: auto">
-    <div class="modal-dialog modal-notify modal-info" role="document">
-        <div class="modal-content">
-            <div class="modal-header text-center"  style="background-color: #a446f1;">
-                <!-- TITULO -->
-                <h4 class="modal-title white-text w-100 font-weight-bold py-2">
-                    Consulta - PAY
-                </h4>
-
-            </div>
-
-            <!--Body-->
-            <div class="modal-body">
-                <div class="inicio">
-                    <!-- De aqui se puede usar el ngfor* para obtener todos los datos de la BD -->
-                    <table class="table table-striped">
-                        <thead>
-                            <th>ID</th>
-                            <th>TITLE</th>
-                            <th>SAL</th>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <!-- Aqui va lo recuperado de la base de datos -->
-                                <td>Info</td>
-                                <td>Info</td>
-                                <td>Info</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <!--/.Body-->
-        </div>
-
-    </div>
-
-</div>
-<!------------------------------------ FIN DE MODAL DE TABLA PAY ------------------------------------------------------------------------------>
-
-
-<!-------------------------------------- MODAL DE TABLA PROJ ------------------------------------------------------------------------------>
-<div mdbModal #proj="mdbModal" class="modal fade top" id="projModalTop" tabindex="-1" role="dialog"
-    aria-labelledby="myModalLabel" aria-hidden="true" style="overflow-y: auto">
-    <div class="modal-dialog modal-notify modal-info" role="document">
-        <div class="modal-content">
-            <div class="modal-header text-center"  style="background-color: #a446f1;">
-                <!-- TITULO -->
-                <h4 class="modal-title white-text w-100 font-weight-bold py-2">
-                    Consulta - PROJ
-                </h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="proj.hide()">
-                    <span aria-hidden="true" class="white-text">&times;</span>
-                </button>
-            </div>
-
-            <!--Body-->
-            <div class="modal-body">
-                <div class="inicio">
-                    <!-- De aqui se puede usar el ngfor* para obtener todos los datos de la BD -->
-                    <table class="table table-striped">
-                        <thead>
-                            <th>ID</th>
-                            <th>PNO</th>
-                            <th>PNAME</th>
-                            <th>BUDGET</th>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <!-- Aqui va lo recuperado de la base de datos -->
-                                <td>Info</td>
-                                <td>Info</td>
-                                <td>Info</td>
-                                <td>Info</td>
-                            </tr>
-                        </tbody>
-
-                    </table>
-                </div>
-            </div>
-            <!--/.Body-->
-        </div>
-
-    </div>
-
-</div>
-<!------------------------------------ FIN DE MODAL DE TABLA PROJ ------------------------------------------------------------------------------>
