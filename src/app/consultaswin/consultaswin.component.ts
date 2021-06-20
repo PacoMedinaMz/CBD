@@ -27,7 +27,85 @@ export class ConsultaswinComponent implements OnInit {
   countries = COUNTRIES;
 
   constructor() {
-  
+    fetch('http://localhost:3003/windows/conAsg', {
+      method: 'POST',
+      headers: {
+        'Content-Type': "application/json"
+      } }).then(() => {
+        console.log("Asg")
+      })
+
+      fetch('http://localhost:3003/windows/conAsg1', {
+      method: 'POST',
+      headers: {
+        'Content-Type': "application/json"
+      } }).then(() => {
+        console.log("Asg1")
+      })
+
+      fetch('http://localhost:3003/windows/conAsg2', {
+      method: 'POST',
+      headers: {
+        'Content-Type': "application/json"
+      } }).then(() => {
+        console.log("Asg2")
+      })
+
+      fetch('http://localhost:3003/windows/conAsg3', {
+      method: 'POST',
+      headers: {
+        'Content-Type': "application/json"
+      } }).then(() => {
+        console.log("Asg3")
+      })
+
+      fetch('http://localhost:3003/windows/conEmp', {
+      method: 'POST',
+      headers: {
+        'Content-Type': "application/json"
+      } }).then(() => {
+        console.log("Emp")
+      })
+
+      fetch('http://localhost:3003/windows/conPay', {
+      method: 'POST',
+      headers: {
+        'Content-Type': "application/json"
+      } }).then(() => {
+        console.log("Pay")
+      })
+
+      fetch('http://localhost:3003/windows/conProj', {
+      method: 'POST',
+      headers: {
+        'Content-Type': "application/json"
+      } }).then(() => {
+        console.log("Proj")
+      })
+
+      fetch('http://localhost:3003/windows/conProj1', {
+      method: 'POST',
+      headers: {
+        'Content-Type': "application/json"
+      } }).then(() => {
+        console.log("Proj1")
+      })
+
+      fetch('http://localhost:3003/windows/conProj2', {
+      method: 'POST',
+      headers: {
+        'Content-Type': "application/json"
+      } }).then(() => {
+        console.log("Proj2")
+      })
+
+      fetch('http://localhost:3003/windows/conProj3', {
+      method: 'POST',
+      headers: {
+        'Content-Type': "application/json"
+      } }).then(() => {
+        console.log("Proj3")
+      })
   }
 
   ngOnInit(): void {
