@@ -501,7 +501,7 @@ router.post('/conAsg', function (req, res) {
               res.status(500).json({ status: 'error' });
           } else {
               res.status(200).json(result);
-              console.log(result);
+              console.log("resultado:", result);
           }
       }
   );
